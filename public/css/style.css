@@ -1,0 +1,224 @@
+body {
+  font-size: 100%;
+  padding-top: 3.5rem;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #05445E;
+}
+
+.col-auto {
+  background-color: white;
+  color: #05445E;
+}
+
+.list-group-item:hover,
+.nav-link:hover,
+.border:hover{
+  background-color: #05445E;
+  color: #C3E0E5;
+}
+
+.btn-success:hover,
+.btn-light:hover {
+  background-color: #05445E;
+  color: #C3E0E5;
+  border-color: #05445E;
+}
+
+.btn-light {
+  color: #05445E;
+  background-color: transparent;
+}
+
+/* .btn-info a{
+  color: #05445E;
+  text-decoration: none;
+}
+
+.btn-info a:hover{
+  color:#D4F1F4;
+} */
+
+.nav-link,
+.rounded-circle,
+.card,
+.table {
+  color: #05445E;
+}
+
+.navbar .d-block {
+  color: #C3E0E5;
+}
+
+.navbar .d-block:hover {
+  color: #DED93E;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #05445E;
+}
+
+.shadow1 {
+  -moz-box-shadow: inset 0 0 10px #bdcacc;
+  -webkit-box-shadow: inset 0 0 10px #bdcacc;
+  box-shadow: inset 0 0 50px #bdcacc;
+  transition: 0.5s;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.shadow1:hover {
+  -moz-box-shadow: inset 0 0 10px #bdcacc;
+  -webkit-box-shadow: inset 0 0 10px #bdcacc;
+  box-shadow: inset 0 0 10px #bdcacc;
+  transition: 0.5s;
+  padding: 8px;
+}
+
+/* sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  /* background-color: #d8f0f7; */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px;
+  text-decoration: none;
+  color: #05445E;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+  margin-left: 50px;
+  color: grey;
+}
+
+.sidebar .closebtn:hover {
+  color: #05445E;
+}
+
+.openbtn {
+  cursor: pointer;
+  background-color: white;
+  color: #05445E;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #05445E;
+  color: white;
+}
+
+.list-group-item {
+  /* background-color: #c5e4ee; */
+  color: #05445E;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
+
+table .table-active {
+  background-color: #D4F1F4;
+  color: #05445E;
+}
+
+/* card grafik */
+.list-x {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  /*transform: scale(0.98);*/
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+
+.list-x.active .card {
+  cursor: default;
+  cursor: -webkit-grabbing;
+  transform: scale(0.99);
+}
+
+.item {
+  display: inline-block;
+  margin-left: 5px;
+  border-radius: 10px;
+
+  -webkit-box-shadow: inset 0px 0px 6px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 6px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 6px -2px rgba(0, 0, 0, 0.75);
+
+  -webkit-transition: 0.2s ease-in-out 0s;
+  -moz-transition: 0.2s ease-in-out 0s;
+  -o-transition: 0.2s ease-in-out 0s;
+}
+
+.list-x.active .item {
+  -webkit-box-shadow: inset 0px 0px 12px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 12px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 12px -2px rgba(0, 0, 0, 0.75);
+}
+
+.list-x .card {
+  color: #05445E;
+  border-radius: 4px;
+}
+
+.container .row .tes {
+  color: #DED93E;
+}
