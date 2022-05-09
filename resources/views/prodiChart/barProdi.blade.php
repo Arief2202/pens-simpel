@@ -40,8 +40,8 @@
                 label: 'Total Penelitian',
                 data: jumlah,
                 backgroundColor: [
-
-                'rgb(40, 178, 170)',
+                    '#05445E',
+                // 'rgb(40, 178, 170)',
                 ],
 
                 borderWidth: 1
