@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('prodi_id');
             $table->foreignId('skema_id');
+            $table->integer('dosen_id');
             $table->string('judul');
             $table->string('rumpun_ilmu');
             $table->text('abstrak');

@@ -6,7 +6,8 @@
             </a>
         </div>
         <div class="flex-grow-1 d-flex align-items-center">
-            <div class="navbar-title"><img src={{ asset('img/logo.png') }} alt="logo" class="p-2" style="width: 150px;"></div>
+            <div class="navbar-title"><img src={{ asset('img/logo.png') }} alt="logo" class="p-2" style="width: 150px;">
+            </div>
             <form class="w-100 me-3">
                 {{-- <input type="search" class="form-control" placeholder="Search..."> --}}
             </form>
@@ -22,7 +23,13 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button class="dropdown-item">Sign out</button>
+                        </form>
+                        {{-- <a class="dropdown-item" href="#">Sign out</a> --}}
+                    </li>
                 </ul>
             </div>
         </div>

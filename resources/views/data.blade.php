@@ -54,7 +54,7 @@
                 <td>
                   <ul>
                     @foreach ($penelitian->dosen as $dosen)
-                    <li>{{ $dosen->nama }}</li>
+                    <li>{{ $dosen->nama }} <b>{{ ($dosen->id === $penelitian->dosen_id) ? '(Ketua)' : '' }}</b></li>
                     @endforeach
                   </ul>
                 </td>
@@ -74,7 +74,7 @@
               @endif
             </tbody>
           </table>
-          
+
         </div>
       </div>
     </div>

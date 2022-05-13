@@ -1,24 +1,24 @@
 $(document).ready(function () {
   $('#dtOrderExample').DataTable({
-    "order": [[ 3, "desc" ]]
+    "order": [[3, "desc"]]
   });
-    $('.dataTables_length').addClass('bs-select');
+  $('.dataTables_length').addClass('bs-select');
 });
 
-  // sidebar
+// sidebar
 
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "15%";
-    document.getElementById("main").style.marginLeft = "15%";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
+function openNav() {
+  document.getElementById("mySidebar").style.width = "15%";
+  document.getElementById("main").style.marginLeft = "15%";
+}
 
-  // animasi card beranda
-  const slider = document.querySelector('.list-x');
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+// animasi card beranda
+const slider = document.querySelector('.list-x');
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -38,10 +38,28 @@ slider.addEventListener('mouseup', () => {
   slider.classList.remove('active');
 });
 slider.addEventListener('mousemove', (e) => {
-  if(!isDown) return;
+  if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 3; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
   console.log(walk);
+});
+
+
+// Js dropdown
+const optionMenu = document.querySelector(".select-menu"),
+  selectBtn = optionMenu.querySelector(".select-btn"),
+  options = optionMenu.querySelectorAll(".option"),
+  sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+options.forEach(option => {
+  option.addEventListener("click", () => {
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
+
+    optionMenu.classList.remove("active");
+  });
 });

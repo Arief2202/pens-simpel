@@ -2,7 +2,7 @@
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start ">
-        <a href="/" class="list-group-item border-end-0 d-inline-block text-truncate {{ ($title === "graphic") ? 'active' : '' }}" data-bs-parent="#sidebar"><i class="fa-solid fa-house me-2"></i><span class="ms-1 d-none d-sm-inline">Beranda</span></a>
+        <a href="/home" class="list-group-item border-end-0 d-inline-block text-truncate {{ ($title === "graphic") ? 'active' : '' }}" data-bs-parent="#sidebar"><i class="fa-solid fa-house me-2"></i><span class="ms-1 d-none d-sm-inline">Beranda</span></a>
         <a href="#submenu1" data-bs-toggle="collapse" class="list-group-item border-end-0 d-inline-block text-truncate">
             <i class="fa fa-th-list me-2"></i><span class="ms-1 d-none d-sm-inline">Data Penelitian</span> </a>
             <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu" style="background-color: #d8f0f7">

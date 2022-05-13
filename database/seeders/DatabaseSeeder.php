@@ -68,6 +68,15 @@ class DatabaseSeeder extends Seeder
             "no_telp" => 87172,
             "alamat" => "Surabaya",
         ]);
+        Dosen::create([
+            "prodi_id" => 2,
+            "NIP" => 123456789012345671,
+            "nama" => "Dosen Umum",
+            "email" => "dosen@gmail.com",
+            "password" => bcrypt('dosen'),
+            "no_telp" => 87172,
+            "alamat" => "Surabaya",
+        ]);
 
         Skema::create([
             "nama" => "Dasar",
@@ -83,6 +92,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 2,
+            'dosen_id' => 1,
             "skema_id" => 1,
             "judul" => "Perancangan Sistem Manajemen Rumah Sakit Berbasis Web",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -101,6 +111,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 1,
+            'dosen_id' => 2,
             "skema_id" => 2,
             "judul" => "Rancang Bangun Aplikasi Alat Musik Kolintang Menggunakan Augmented Reality Berbasis Android",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -119,6 +130,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 2,
+            'dosen_id' => 3,
             "skema_id" => 3,
             "judul" => "Pemetaan Daerah Ancaman Tanah Longsor di Kota Manado",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -137,6 +149,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 2,
+            'dosen_id' => 1,
             "skema_id" => 4,
             "judul" => "Rancang Bangun Aplikasi Bimbingan Dosen Wali Secara Online",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -155,6 +168,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 2,
+            'dosen_id' => 2,
             "skema_id" => 1,
             "judul" => "Alat Peraga Digital Pengenalan Pahlawan Sulawesi Utara",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -173,6 +187,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 1,
+            'dosen_id' => 1,
             "skema_id" => 1,
             "judul" => "Perancangan Aplikasi Web Berbasis Usability",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -191,6 +206,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Penelitian::create([
             "prodi_id" => 1,
+            'dosen_id' => 3,
+
             "skema_id" => 2,
             "judul" => "Aplikasi Agenda Berbasis Android Dengan Fitur Push Notification Dan Reminder",
             "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
@@ -208,7 +225,7 @@ class DatabaseSeeder extends Seeder
             "tahun" => Carbon::parse('2022-01-10')->format('Y'),
         ]);
         Penelitian::create([
-            // "dosen_id" => 2,
+            "dosen_id" => 2,
             "prodi_id" => 1,
             "skema_id" => 3,
             "judul" => "Mendeteksi Keakuratan Metode Noise Salt And Pepper Dengan Median Filter",
@@ -227,7 +244,7 @@ class DatabaseSeeder extends Seeder
             "tahun" => Carbon::parse('2020-01-10')->format('Y'),
         ]);
         Penelitian::create([
-            // "dosen_id" => 3,
+            "dosen_id" => 3,
             "prodi_id" => 1,
             "skema_id" => 1,
             "judul" => "Pengembangan Aplikasi Modul Pembelajaran Desain Grafis Berbasis Android",
@@ -246,7 +263,7 @@ class DatabaseSeeder extends Seeder
             "tahun" => Carbon::parse('2021-01-10')->format('Y'),
         ]);
         Penelitian::create([
-            // "dosen_id" => 1,
+            "dosen_id" => 1,
             "prodi_id" => 1,
             "skema_id" => 2,
             "judul" => "Penerapan Metode Jaringan Syaraf Tiruan Pada Sistem Deteksi Citra Darah Manusia",
@@ -265,7 +282,7 @@ class DatabaseSeeder extends Seeder
             "tahun" => Carbon::parse('2020-01-10')->format('Y'),
         ]);
         Penelitian::create([
-            // "dosen_id" => 2,
+            "dosen_id" => 2,
             "prodi_id" => 1,
             "skema_id" => 3,
             "judul" => "Sistem Informasi Pemasaran Rumah Berbasis Web Gis",
