@@ -71,7 +71,6 @@ h2 {
   -webkit-box-shadow: inset 0 0 10px #bdcacc;
   box-shadow: inset 0 0 50px #bdcacc;
   transition: 0.5s;
-  padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -81,7 +80,6 @@ h2 {
   -webkit-box-shadow: inset 0 0 10px #bdcacc;
   box-shadow: inset 0 0 10px #bdcacc;
   transition: 0.5s;
-  padding: 8px;
 }
 
 /* sidebar */

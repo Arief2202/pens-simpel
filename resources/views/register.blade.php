@@ -703,6 +703,9 @@
     }
   }
 
+
+
+
     </style>
 </head>
 
@@ -716,7 +719,7 @@
                 <div class="card-body">
                     <form method="POST">
 
-                        <div class="form-row m-b-10">
+                        {{-- <div class="form-row m-b-10">
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
@@ -731,8 +734,22 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> --}}
+
+                        <div class="form-row">
+                          <div class="value">
+                              <div class="input-group">
+                                  <input class="input--style-5" type="name" name="name" placeholder="Nama Lengkap">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="nip" placeholder="Masukkan NIP Pegawai">
+                            </div>
                         </div>
-                        
+                    </div>
                         <div class="form-row">
                             <div class="value">
                                 <div class="input-group">
@@ -750,12 +767,38 @@
                         </div>
 
                         <div class="form-row">
+                          <div class="value">
+                              <div class="input-group">
+                                  <input class="input--style-5" type="text" name="address" placeholder="Alamat Lengkap">
+                              </div>
+                          </div>
+                      </div>
+
+                        <div class="form-row">
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="password" name="password" placeholder="Kata Sandi">
                                 </div>
                             </div>
                         </div>
+                        
+                      {{-- Dropdown Menu --}}
+                      {{-- <div class="sec-center"> 	
+                        <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+                        <label class="for-dropdown" for="dropdown">Dropdown Menu</label>
+                        <div class="section-dropdown"> 
+                          <a href="#">Dropdown Link </a>
+                          <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
+                          <label class="for-dropdown-sub" for="dropdown-sub">Dropdown Sub </label>
+                          <div class="section-dropdown-sub"> 
+                            <a href="#">Dropdown Link</a>
+                            <a href="#">Dropdown Link</a>
+                          </div>
+                        </div>
+                      </div> --}}
+
+
+                      
 
                     
                         <div class="form-row p-t-20  ">
@@ -773,6 +816,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Optional JavaScript -->
     

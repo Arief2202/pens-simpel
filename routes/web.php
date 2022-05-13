@@ -23,6 +23,7 @@ Route::get('/pieProdi', [DashboardChartController::class, 'pieChartProdi']);
 
 Route::get('/data', [DashboardPenelitianController::class, 'index']);
 Route::get('/data/{penelitian:id}', [DashboardPenelitianController::class, 'show']);
+
 Route::get('/dataprodi', [DashboardPenelitianController::class, 'prodibased']);
 Route::get('/dataprodi/{penelitian:prodi_id}', [DashboardPenelitianController::class, 'prodibasedData']);
 

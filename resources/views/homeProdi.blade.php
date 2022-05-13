@@ -22,7 +22,9 @@
                 <a href="\pieProdi" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;><i class="fa fa-pie-chart me-2"></i>Pie Chart</a>
                 <div class="shadow1">
                     <div class="content"> 
+                        <div class="col-md-12">
                         @yield('chartProdi')
+                        </div>
                     </div>
                 </div>
             </div>

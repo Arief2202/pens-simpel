@@ -1,7 +1,7 @@
 @extends('home')
 @section('chartTahun')
              
-<center><div class="col-4 mb-2">
+<center><div class="col-md-6"> 
     {{-- convert data ke array --}}
     <?php 
         $jml = array();
@@ -57,5 +57,6 @@
                 config
             );
         </script>
+        </div>
 
 @endsection
