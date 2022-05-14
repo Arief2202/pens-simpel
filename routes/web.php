@@ -18,23 +18,23 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('login');
 
 
-Route::get('/home', [DashboardChartController::class, 'graphic']);
-Route::get('/pieYear', [DashboardChartController::class, 'pieGraphic']);
-Route::get('/barProdi', [DashboardChartController::class, 'barChartProdi']);
-Route::get('/pieProdi', [DashboardChartController::class, 'pieChartProdi']);
+Route::get('/home', [DashboardChartController::class, 'graphic'])->middleware('auth');
+Route::get('/pieYear', [DashboardChartController::class, 'pieGraphic'])->middleware('auth');
+Route::get('/barProdi', [DashboardChartController::class, 'barChartProdi'])->middleware('auth');
+Route::get('/pieProdi', [DashboardChartController::class, 'pieChartProdi'])->middleware('auth');
 
 
-Route::get('/data', [DashboardPenelitianController::class, 'index']);
-Route::get('/data/{penelitian:id}', [DashboardPenelitianController::class, 'show']);
+Route::get('/data', [DashboardPenelitianController::class, 'index'])->middleware('auth');
+Route::get('/data/{penelitian:id}', [DashboardPenelitianController::class, 'show'])->middleware('auth');
 
-Route::get('/dataprodi', [DashboardPenelitianController::class, 'prodibased']);
-Route::get('/dataprodi/{penelitian:prodi_id}', [DashboardPenelitianController::class, 'prodibasedData']);
+Route::get('/dataprodi', [DashboardPenelitianController::class, 'prodibased'])->middleware('auth');
+Route::get('/dataprodi/{penelitian:prodi_id}', [DashboardPenelitianController::class, 'prodibasedData'])->middleware('auth');
 
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
@@ -51,6 +51,6 @@ Route::get('/pengumuman', function () {
     ]);
 });
 
-Route::get('/hai', function () {
-    return view('landingpage.page');
-});
+// Route::get('/hai', function () {
+//     return view('landingpage.page');
+// });

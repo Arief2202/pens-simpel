@@ -14,7 +14,7 @@
             <div class="flex-shrink-0 dropdown">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    Hi, {{ $name }}
+                    Hi, {{ auth()->user()->nama }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2" style="">
                     <li><a class="dropdown-item" href="#">New project...</a></li>

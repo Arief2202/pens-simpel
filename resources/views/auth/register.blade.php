@@ -13,12 +13,12 @@
   <!-- Font special for pages-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
     rel="stylesheet">
-    
+
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-  
- 
+
+
 
   <style>
     /* ==========================================================================
@@ -194,7 +194,7 @@
       font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
       font-weight: bold;
       font-size: 25px;
-      background:linear-gradient(to bottom, rgba(5, 67, 94, 0.83), rgb(5, 67, 94)),url(../img/bg.png);
+      background: linear-gradient(to bottom, rgba(5, 67, 94, 0.83), rgb(5, 67, 94)), url(../img/bg.png);
     }
 
     /* ==========================================================================
@@ -356,69 +356,77 @@
 
 
     /* Dropdown */
-    .select-menu{
-    width: 500px;
-    margin: 20px 300px 20px auto;
-}
-.select-menu .select-btn{
-  
-   width: 500px;
-    display: flex;
-    height: 55px;
-    background: rgb(255, 255, 255);
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 400;
-    border-radius: 5px;
-    align-items: center;
-    cursor: pointer;
-    justify-content: space-between;
+    .select-menu {
+      width: 500px;
+      margin: 20px 300px 20px auto;
+    }
 
-}
-.select-btn i{
-  
-    font-size: 25px;
-    transition: 0.3s;
-}
-.select-menu.active .select-btn i{
-    transform: rotate(-180deg);
-}
-.select-menu .options{
-    position: relative;
-    padding: 10px;
-    margin: 5px ;
-    border-radius: 0px;
-    background: #396A7E;
-    display: none;
-}
-.select-menu.active .options{
-    display: block;
-    border-radius: 0px;
- 
-}
-.options .option{
-  width: 350px;
-  margin: 5px -15px ;
-    display: flex;
-    height: 50px;
-    cursor: pointer;
-    padding: 0 16px;
-    border-radius: 5px;
-    align-items: center;
-    background: rgb(255, 255, 255);
-}
-.options .option:hover{
-    background: #ced5d8;
-}
-.option i{
-    font-size: 25px;
-    margin-right: 12px;
-}
-.option .option-text{
-    font-size: 18px;
-    color: #333;
-}
+    .select-menu .select-btn {
 
+      width: 500px;
+      display: flex;
+      height: 55px;
+      background: rgb(255, 255, 255);
+      padding: 20px;
+      font-size: 18px;
+      font-weight: 400;
+      border-radius: 5px;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+
+    }
+
+    .select-btn i {
+
+      font-size: 25px;
+      transition: 0.3s;
+    }
+
+    .select-menu.active .select-btn i {
+      transform: rotate(-180deg);
+    }
+
+    .select-menu .options {
+      position: relative;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 0px;
+      background: #396A7E;
+      display: none;
+    }
+
+    .select-menu.active .options {
+      display: block;
+      border-radius: 0px;
+
+    }
+
+    .options .option {
+      width: 350px;
+      margin: 5px -15px;
+      display: flex;
+      height: 50px;
+      cursor: pointer;
+      padding: 0 16px;
+      border-radius: 5px;
+      align-items: center;
+      background: rgb(255, 255, 255);
+    }
+
+    .options .option:hover {
+      background: #ced5d8;
+    }
+
+    .option i {
+      font-size: 25px;
+      margin-right: 12px;
+    }
+
+    .option .option-text {
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 
@@ -477,38 +485,50 @@
                 </div>
               </div>
             </div>
-            {{-- Jangan dihapus ya gais dibawah ini wkwk --}}
-            <input class="input--style-5" hidden type="text" name="prodi_id" placeholder="Kata Sandi" value="2">
 
-                        
-            <div class="select-menu">
+         {{-- vid mintol edit tampilan dari input select ng bawah iki yo --}}
+            <div class="form-group">
+              <select class="form-control" aria-placeholder="halo" name="prodi_id" id="exampleFormControlSelect1">
+                <option value="">Pilih Prodi</option>
+                @foreach ($prodis as $prodi)
+                <option value="{{ $prodi->id }}">{{ $prodi->nama }}</option>
+
+                @endforeach
+              </select>
+            </div>
+          {{-- end input select --}}
+
+
+
+
+
+
+
+            {{-- <div class="select-menu">
               <div class="select-btn">
-                  <span class="sBtn-text">Pilih Prodi</span>
-                  <i class="bx bx-chevron-down"></i>
+                <span class="sBtn-text">Pilih Prodi</span>
+                <i class="bx bx-chevron-down"></i>
               </div>
               <ul class="options">
-                  <li class="option">
-                      <span class="option-text">Teknik Elektronika</span>
-                  </li>
-                  <li class="option">
-                      <span class="option-text">Teknik Telekomunikasi</span>
-                  </li>
-                  <li class="option">
-                     <span class="option-text">Teknik Elektro Industri</span>
-                  </li>  
-                  <li class="option">
-                     <span class="option-text">Teknik Informatika</span>
-                   </li> 
-                   <li class="option">
-                    <span class="option-text">Teknik Mekatronika</span>
-                  </li> 
-                   
+                <li class="option">
+                  <span class="option-text">Teknik Elektronika</span>
+                </li>
+                <li class="option">
+                  <span class="option-text">Teknik Telekomunikasi</span>
+                </li>
+                <li class="option">
+                  <span class="option-text">Teknik Elektro Industri</span>
+                </li>
+                <li class="option">
+                  <span class="option-text">Teknik Informatika</span>
+                </li>
+                <li class="option">
+                  <span class="option-text">Teknik Mekatronika</span>
+                </li>
 
-        
-         
-                  
+
               </ul>
-          </div>
+            </div> --}}
 
             <div class="form-row p-t-20  ">
               <label class="label label--block">Dengan mengklik Daftar, Anda menyetujui <a href="">Ketentuan,
@@ -525,8 +545,8 @@
     </div>
   </div>
 
-     
-  
+
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -543,7 +563,7 @@
   </script>
 
   <script type="text/javascript">
-  const optionMenu = document.querySelector(".select-menu"),
+    const optionMenu = document.querySelector(".select-menu"),
     selectBtn = optionMenu.querySelector(".select-btn"),
     options = optionMenu.querySelectorAll(".option"),
     sBtn_text = optionMenu.querySelector(".sBtn-text");

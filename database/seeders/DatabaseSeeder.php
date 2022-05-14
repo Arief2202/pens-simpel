@@ -71,12 +71,48 @@ class DatabaseSeeder extends Seeder
         Dosen::create([
             "prodi_id" => 2,
             "NIP" => 123456789012345671,
-            "nama" => "Dosen Umum",
+            "nama" => "Dosen Biasa",
             "email" => "dosen@gmail.com",
             "password" => bcrypt('dosen'),
             "no_telp" => 87172,
             "alamat" => "Surabaya",
         ]);
+        // Dosen::create([
+        //     "prodi_id" => 2,
+        //     "NIP" => 123456789012345982,
+        //     "nama" => "Tsania",
+        //     "email" => "tsania@gmail.com",
+        //     "password" => bcrypt('tsania'),
+        //     "no_telp" => 87172,
+        //     "alamat" => "Surabaya",
+        // ]);
+        // Dosen::create([
+        //     "prodi_id" => 2,
+        //     "NIP" => 123456789012345673,
+        //     "nama" => "Rivaldo",
+        //     "email" => "rivaldo@gmail.com",
+        //     "password" => bcrypt('rivaldo'),
+        //     "no_telp" => 87172,
+        //     "alamat" => "Surabaya",
+        // ]);
+        // Dosen::create([
+        //     "prodi_id" => 2,
+        //     "NIP" => 123456789012345674,
+        //     "nama" => "Jovan",
+        //     "email" => "jovan@gmail.com",
+        //     "password" => bcrypt('jovan'),
+        //     "no_telp" => 87172,
+        //     "alamat" => "Surabaya",
+        // ]);
+        // Dosen::create([
+        //     "prodi_id" => 2,
+        //     "NIP" => 123456789012345675,
+        //     "nama" => "David",
+        //     "email" => "david@gmail.com",
+        //     "password" => bcrypt('david'),
+        //     "no_telp" => 87172,
+        //     "alamat" => "Surabaya",
+        // ]);
 
         Skema::create([
             "nama" => "Dasar",
