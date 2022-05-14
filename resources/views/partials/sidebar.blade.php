@@ -2,6 +2,7 @@
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start ">
+        <div class="nav-logo disabled" style="padding: 5%; color:grey; font-weight: bolder">UTAMA</div>
         <a href="/home" class="list-group-item border-end-0 d-inline-block text-truncate {{ ($title === "graphic") ? 'active' : '' }}" data-bs-parent="#sidebar"><i class="fa-solid fa-house me-2"></i><span class="ms-1 d-none d-sm-inline">Beranda</span></a>
         <a href="#submenu1" data-bs-toggle="collapse" class="list-group-item border-end-0 d-inline-block text-truncate">
             <i class="fa fa-th-list me-2"></i><span class="ms-1 d-none d-sm-inline">Data Penelitian</span> </a>
@@ -17,8 +18,9 @@
                 </li>
             </ul>
         <a href="/pengumuman" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i class="fa fa-bullhorn me-2"></i><span class="ms-1 d-none d-sm-inline">Pengumuman</span></a>
+        <div class="nav-logo disabled" style="padding: 5%; color:grey; font-weight: bolder">AKUN</div>
         <a href="#submenu2" data-bs-toggle="collapse" class="list-group-item border-end-0 d-inline-block text-truncate">
-            <i class="fa fa-user me-2"></i><span class="ms-1 d-none d-sm-inline">Akun</span> </a>
+            <i class="fa fa-user me-2"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu" style="background-color: #d8f0f7">
                 <li class="w-100">
                     <a href="#" class="nav-link" style="color: grey"><i class="fa fa-caret-right me-3" ></i><span class="d-none d-sm-inline">Lihat Profile</span></a>

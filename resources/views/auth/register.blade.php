@@ -13,11 +13,12 @@
   <!-- Font special for pages-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
     rel="stylesheet">
+    
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <!-- Main CSS-->
-  <link href="style_register.css" rel="stylesheet" media="all">
 
+  
+ 
 
   <style>
     /* ==========================================================================
@@ -62,6 +63,7 @@
     }
 
     .form-row {
+
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -192,7 +194,7 @@
       font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
       font-weight: bold;
       font-size: 25px;
-      background-color: #05445E;
+      background:linear-gradient(to bottom, rgba(5, 67, 94, 0.83), rgb(5, 67, 94)),url(../img/bg.png);
     }
 
     /* ==========================================================================
@@ -356,22 +358,25 @@
     /* Dropdown */
     .select-menu{
     width: 500px;
-    margin: 30px 300px 20px auto;
+    margin: 20px 300px 20px auto;
 }
 .select-menu .select-btn{
+  
+   width: 500px;
     display: flex;
     height: 55px;
-    background: #fff;
+    background: rgb(255, 255, 255);
     padding: 20px;
     font-size: 18px;
     font-weight: 400;
-    border-radius: 8px;
+    border-radius: 5px;
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
 }
 .select-btn i{
+  
     font-size: 25px;
     transition: 0.3s;
 }
@@ -380,27 +385,30 @@
 }
 .select-menu .options{
     position: relative;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: 5px ;
+    border-radius: 0px;
+    background: #396A7E;
     display: none;
 }
 .select-menu.active .options{
     display: block;
+    border-radius: 0px;
+ 
 }
 .options .option{
+  width: 350px;
+  margin: 5px -15px ;
     display: flex;
-    height: 55px;
+    height: 50px;
     cursor: pointer;
     padding: 0 16px;
-    border-radius: 8px;
+    border-radius: 5px;
     align-items: center;
-    background: #fff;
+    background: rgb(255, 255, 255);
 }
 .options .option:hover{
-    background: #F2F2F2;
+    background: #ced5d8;
 }
 .option i{
     font-size: 25px;
@@ -471,7 +479,8 @@
             </div>
             {{-- Jangan dihapus ya gais dibawah ini wkwk --}}
             <input class="input--style-5" hidden type="text" name="prodi_id" placeholder="Kata Sandi" value="2">
-            
+
+                        
             <div class="select-menu">
               <div class="select-btn">
                   <span class="sBtn-text">Pilih Prodi</span>
@@ -479,20 +488,25 @@
               </div>
               <ul class="options">
                   <li class="option">
-                      <span class="option-text">Prodi Informatika & Komputer</span>
+                      <span class="option-text">Teknik Elektronika</span>
                   </li>
                   <li class="option">
-                      <span class="option-text">Prodi Elektro</span>
+                      <span class="option-text">Teknik Telekomunikasi</span>
                   </li>
                   <li class="option">
-                      <span class="option-text">ProdI</span>
-                  </li>
+                     <span class="option-text">Teknik Elektro Industri</span>
+                  </li>  
                   <li class="option">
-                      <span class="option-text">Facebook</span>
-                  </li>
-                  <li class="option">
-                      <span class="option-text">Twitter</span>
-                  </li>
+                     <span class="option-text">Teknik Informatika</span>
+                   </li> 
+                   <li class="option">
+                    <span class="option-text">Teknik Mekatronika</span>
+                  </li> 
+                   
+
+        
+         
+                  
               </ul>
           </div>
 
@@ -511,19 +525,41 @@
     </div>
   </div>
 
+     
+  
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
 
-<script src="js/script.js"></script>
+  <script type="text/javascript">
+  const optionMenu = document.querySelector(".select-menu"),
+    selectBtn = optionMenu.querySelector(".select-btn"),
+    options = optionMenu.querySelectorAll(".option"),
+    sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+    selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            let selectedOption = option.querySelector(".option-text").innerText;
+            sBtn_text.innerText = selectedOption;
+
+            optionMenu.classList.remove("active");
+        });
+    });
+
+  </script>
 
 </body>
 

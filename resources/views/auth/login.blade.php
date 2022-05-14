@@ -19,7 +19,7 @@
   <style>
     body {
       font-family: "Roboto", sans-serif;
-      background-color: #05445E;
+      background:linear-gradient(to bottom, rgba(5, 67, 94, 0.83), rgb(5, 67, 94)),url(../img/bg.png);
     }
 
     p {
@@ -190,6 +190,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-12">
               <div class="form-block mx-auto">
+                
                 {{-- Menampilkan alert jika berhasil Membuat akun --}}
                 @if (session()->has('success'))
                 <div class="alert alert-success " role="alert">

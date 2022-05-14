@@ -60,8 +60,7 @@
                 </td>
                 <td>{{ $penelitian->tahun }}</td>
                 <td class="text-center">
-                  <a href="/data/{{ $penelitian->id }}" class="btn btn-sm btn-success"><i
-                      class="fa fa-external-link"></i></a>
+                  <a href="/data/{{ $penelitian->id }}"><i class="fa fa-eye" style="color: rgb(5, 67, 94);"></i></a>
                 </td>
               </tr>
 

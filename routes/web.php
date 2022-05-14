@@ -50,3 +50,7 @@ Route::get('/pengumuman', function () {
         "email" => "tsaniashella@it.student.pens.ac.id"
     ]);
 });
+
+Route::get('/hai', function () {
+    return view('landingpage.page');
+});
