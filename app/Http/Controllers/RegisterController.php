@@ -28,6 +28,7 @@ class RegisterController extends Controller
             'NIP' => 'required|digits:18',
             'email' => 'required|email:dns',
             'password' => 'required',
+            'gender' => 'required',
             'alamat' => 'required',
             'no_telp' => 'required',
             'prodi_id' => 'required',

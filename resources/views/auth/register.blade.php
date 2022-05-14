@@ -496,6 +496,15 @@
                 @endforeach
               </select>
             </div>
+
+            <div class="form-group">
+              <select class="form-control" aria-placeholder="halo" name="gender" id="exampleFormControlSelect1">
+                <option value="laki-laki">Laki laki</option>
+               
+                <option value="perempuan">Perempuan</option>
+
+              </select>
+            </div>
           {{-- end input select --}}
 
 

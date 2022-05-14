@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardPenelitianController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/profile', [UserController::class, 'index'])->middleware('auth');
+
+
 
 Route::get('/pengumuman', function () {
     return view('announcement', [
@@ -50,7 +54,3 @@ Route::get('/pengumuman', function () {
         "email" => "tsaniashella@it.student.pens.ac.id"
     ]);
 });
-
-// Route::get('/hai', function () {
-//     return view('landingpage.page');
-// });
