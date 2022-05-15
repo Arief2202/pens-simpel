@@ -1,8 +1,7 @@
 @extends('homeProdi')
 @section('chartProdi')
  
-<center><div class="col-8">
-
+<center><div class="col-md-6">
     <?php 
         $jml = array();
         $prodi = array();
@@ -68,5 +67,5 @@
         );
 
     </script>
-
+</div>
 @endsection

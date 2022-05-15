@@ -1,8 +1,7 @@
 @extends('homeProdi')
 @section('chartProdi')
 
-<center><div class="col-4">
-
+<center><div class="col-md-6">
     <?php 
         $jml = array();
         $prodi = array();
@@ -53,7 +52,7 @@
             };
 
             const config = {
-                type: 'doughnut',
+                type: 'line',
                 data: data,
             };
 
@@ -62,5 +61,5 @@
                 config
             );
     </script>
-
+    </div>
 @endsection

@@ -19,7 +19,7 @@
                 <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2" style="">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
@@ -28,7 +28,6 @@
                             @csrf
                             <button class="dropdown-item">Sign out</button>
                         </form>
-                        {{-- <a class="dropdown-item" href="#">Sign out</a> --}}
                     </li>
                 </ul>
             </div>

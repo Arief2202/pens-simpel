@@ -427,6 +427,17 @@
       font-size: 18px;
       color: #333;
     }
+
+    
+select{
+    width: 350px ;
+    padding: 12px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
   </style>
 </head>
 
@@ -500,9 +511,7 @@
             <div class="form-group">
               <select class="form-control" aria-placeholder="halo" name="gender" id="exampleFormControlSelect1">
                 <option value="laki-laki">Laki laki</option>
-               
                 <option value="perempuan">Perempuan</option>
-
               </select>
             </div>
           {{-- end input select --}}

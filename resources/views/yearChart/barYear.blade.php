@@ -2,7 +2,7 @@
 @section('chartTahun')
 {{-- convert data ke array --}}
 
-<center>
+<center><div class="col-md-6">
     <?php 
         $jml = array();
         $thn = array();
@@ -61,5 +61,5 @@
                 config
             );
         </script>
-
+</div>
 @endsection

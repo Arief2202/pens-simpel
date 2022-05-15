@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardChartController;
+use App\Http\Controllers\DashboardDosenController;
 use App\Http\Controllers\DashboardPenelitianController;
+use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -43,7 +45,8 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/profile', [UserController::class, 'index'])->middleware('auth');
+
+Route::resource('/dashboard/dosen', DashboardDosenController::class)->middleware('auth');
 
 
 

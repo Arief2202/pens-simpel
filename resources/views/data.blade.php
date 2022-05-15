@@ -10,7 +10,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table id="dtOrderExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+          <table id="dtOrder" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
               <tr>
                 <th class="th-sm">NO</th>
@@ -47,9 +47,9 @@
                 <td> {{ $nomer++ }} </td>
                 <td>{{ $penelitian->judul }}</td>
                 <td>
-                  <div class="btn btn-sm"
+                  <center><div class="btn btn-sm"
                     style="background-color:{{ $border }}; color: white; font-weight: bold; cursor: default;">{{
-                    $penelitian->skema->nama }}</div>
+                    $penelitian->skema->nama }}</div></center>
                 </td>
                 <td>
                   <ul>
@@ -58,7 +58,7 @@
                     @endforeach
                   </ul>
                 </td>
-                <td>{{ $penelitian->tahun }}</td>
+                <td><center>{{ $penelitian->tahun }}</center></td>
                 <td class="text-center">
                   <a href="/data/{{ $penelitian->id }}"><i class="fa fa-eye" style="color: rgb(5, 67, 94);"></i></a>
                 </td>
@@ -79,4 +79,27 @@
     </div>
   </div>
 </div>
+<script>
+//   $(document).ready(function () {
+//   $('#dtOrder').DataTable({
+//     "aaSorting": [],
+//     columnDefs: [{
+//     orderable: false,
+//     targets: [0, 5]
+//     }]
+//   });
+//   $('.dataTables_length').addClass('bs-select');
+// });
+$(document).ready(function () {
+  $('#dtOrder').DataTable({
+    "order": [[ 0, "asc" ]],
+    "aaSorting": [],
+    columnDefs: [{
+    orderable: false,
+    targets: [5]
+    }]
+  });
+    $('.dataTables_length').addClass('bs-select');
+});
+</script>
 @endsection

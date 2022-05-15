@@ -1,6 +1,7 @@
 body {
   font-size: 100%;
   padding-top: 3.5rem;
+  background-color: rgb(236, 236, 236);
 }
 
 a,
@@ -93,6 +94,7 @@ h2 {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  background-color: white;
 }
 
 .sidebar a {

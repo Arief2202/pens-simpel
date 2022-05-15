@@ -25,8 +25,8 @@ class RegisterController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'nama' => 'required',
-            'NIP' => 'required|digits:18',
-            'email' => 'required|email:dns',
+            'NIP' => 'required|digits:18|numeric|unique:dosens',
+            'email' => 'required|email:dns|unique:dosens',
             'password' => 'required',
             'gender' => 'required',
             'alamat' => 'required',
