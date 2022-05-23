@@ -23,14 +23,15 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         Prodi::create([
-            "nama" => "Teknik Informatika"
+            "nama" => "D3 Teknik Informatika"
         ]);
         Prodi::create([
-            "nama" => "Teknik Komputer"
+            "nama" => " D3 Teknik Komputer"
         ]);
         // Prodi::create([
-        //     "nama" => "Teknik Elektro"
+        //     "nama" => "D4 Teknik Informatika"
         // ]);
+
         // Prodi::create([
         //     "nama" => "Teknik Elektronika"
         // ]);
@@ -46,6 +47,7 @@ class DatabaseSeeder extends Seeder
             "NIP" => 123451,
             "gender" => 'perempuan',
             "nama" => "Desy Permatasari",
+            'role' => 'dosen',
             "email" => "desy@gmail.com",
             "password" => bcrypt('1234'),
             "no_telp" => 87172,
@@ -56,6 +58,7 @@ class DatabaseSeeder extends Seeder
             "NIP" => 123452,
             "gender" => 'laki-laki',
             "nama" => "Andhik Ampuh",
+            'role' => 'dosen',
             "email" => "andhik@gmail.com",
             "password" => bcrypt('1234'),
             "no_telp" => 87172,
@@ -65,6 +68,7 @@ class DatabaseSeeder extends Seeder
             "prodi_id" => 2,
             "NIP" => 123453,
             "nama" => "Umi Sa'adah",
+            'role' => 'dosen',
             "gender" => 'perempuan',
             "email" => "andhik@gmail.com",
             "password" => bcrypt('1234'),
@@ -75,6 +79,7 @@ class DatabaseSeeder extends Seeder
             "prodi_id" => 2,
             "NIP" => 123456789012345671,
             "nama" => "Dosen Biasa",
+            'role' => 'p3m',
             "gender" => 'laki-laki',
             "email" => "dosen@gmail.com",
             "password" => bcrypt('dosen'),
@@ -95,6 +100,12 @@ class DatabaseSeeder extends Seeder
         Skema::create([
             "nama" => "PLP",
         ]);
+        Skema::create([
+            "nama" => "Internasional",
+        ]);
+
+
+
         Penelitian::create([
             "prodi_id" => 2,
             'dosen_id' => 1,
@@ -172,7 +183,7 @@ class DatabaseSeeder extends Seeder
             "tahun" => Carbon::parse('2022-01-10')->format('Y'),
         ]);
         Penelitian::create([
-            "prodi_id" => 2,
+            "prodi_id" => 1,
             'dosen_id' => 2,
             "skema_id" => 1,
             "judul" => "Alat Peraga Digital Pengenalan Pahlawan Sulawesi Utara",
@@ -305,6 +316,25 @@ class DatabaseSeeder extends Seeder
             "tanggal" => Carbon::parse('2022-01-10'),
             "tahun" => Carbon::parse('2022-01-10')->format('Y'),
         ]);
+        // Penelitian::create([
+        //     "dosen_id" => 2,
+        //     "prodi_id" => 3,
+        //     "skema_id" => 3,
+        //     "judul" => "obat tetes mata",
+        //     "rumpun_ilmu" => "Rekayasa Perangkat Lunak",
+        //     "abstrak" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti inventore quibusdam reprehenderit fugit dignissimos explicabo, dolor veritatis exercitationem perferendis? Reiciendis, eos aspernatur assumenda fugiat molestiae ducimus dicta ab iste, voluptate obcaecati perspiciatis dignissimos nemo enim eum repudiandae vitae, delectus quas harum ullam iusto repellat sed aut maiores aperiam. Quas, aut?",
+        //     "keyword" => "Kepuasan",
+        //     "latar_belakang" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum consequatur veniam animi praesentium iusto dolore, molestiae rem cupiditate commodi amet!",
+        //     "tujuan" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, sint. Nulla voluptates aliquam perspiciatis vero.",
+        //     "tinjau_pustaka" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, sint. Nulla voluptates aliquam perspiciatis vero.",
+        //     "metode" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, sint. Nulla voluptates aliquam perspiciatis vero.",
+        //     "daftar_pustaka" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, sint. Nulla voluptates aliquam perspiciatis vero.",
+        //     "lama_kgtn" => "1 tahun",
+        //     "thn_pekerjaan" => "ke-1",
+        //     "grp_riset" => "rekayasa perangkat lunak",
+        //     "tanggal" => Carbon::parse('2022-01-10'),
+        //     "tahun" => Carbon::parse('2022-01-10')->format('Y'),
+        // ]);
         DosenPenelitian::create([
             "dosen_id" => 1,
             "penelitian_id" => 1,
@@ -317,6 +347,10 @@ class DatabaseSeeder extends Seeder
             "dosen_id" => 3,
             "penelitian_id" => 1,
         ]);
+        DosenPenelitian::create([
+            "dosen_id" => 4,
+            "penelitian_id" => 1,
+        ]);
 
         DosenPenelitian::create([
             "dosen_id" => 1,
@@ -324,6 +358,10 @@ class DatabaseSeeder extends Seeder
         ]);
         DosenPenelitian::create([
             "dosen_id" => 2,
+            "penelitian_id" => 2,
+        ]);
+        DosenPenelitian::create([
+            "dosen_id" => 4,
             "penelitian_id" => 2,
         ]);
 
@@ -350,6 +388,10 @@ class DatabaseSeeder extends Seeder
             "penelitian_id" => 5,
         ]);
         DosenPenelitian::create([
+            "dosen_id" => 4,
+            "penelitian_id" => 5,
+        ]);
+        DosenPenelitian::create([
             "dosen_id" => 3,
             "penelitian_id" => 5,
         ]);
@@ -367,6 +409,10 @@ class DatabaseSeeder extends Seeder
             "penelitian_id" => 6,
         ]);
 
+        DosenPenelitian::create([
+            "dosen_id" => 4,
+            "penelitian_id" => 7,
+        ]);
         DosenPenelitian::create([
             "dosen_id" => 3,
             "penelitian_id" => 7,
@@ -393,6 +439,10 @@ class DatabaseSeeder extends Seeder
             "dosen_id" => 3,
             "penelitian_id" => 9,
         ]);
+        DosenPenelitian::create([
+            "dosen_id" => 4,
+            "penelitian_id" => 9,
+        ]);
 
         DosenPenelitian::create([
             "dosen_id" => 1,
@@ -411,5 +461,13 @@ class DatabaseSeeder extends Seeder
             "dosen_id" => 2,
             "penelitian_id" => 11,
         ]);
+        // DosenPenelitian::create([
+        //     "dosen_id" => 1,
+        //     "penelitian_id" => 12,
+        // ]);
+        // DosenPenelitian::create([
+        //     "dosen_id" => 2,
+        //     "penelitian_id" => 12,
+        // ]);
     }
 }

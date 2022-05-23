@@ -41,6 +41,6 @@
   <body>
     @include('partials.header')
     @include('partials.sidebar')
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

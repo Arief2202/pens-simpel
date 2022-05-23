@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('NIP')->unique();
             $table->string('nama');
             $table->string('email');
+            $table->string('role');
             $table->string('gender');
             $table->string('password');
             $table->bigInteger('no_telp');

@@ -1,6 +1,15 @@
-@extends('homeProdi')
-@section('chartProdi')
+@extends('home')
 
+@section('tema')
+Prodi
+@endsection
+
+@section('buttonchart')
+<a href="\barProdi" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;"><i class="fa fa-bar-chart me-2"></i>Bar Chart</a>
+<a href="\pieProdi" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;"><i class="fa fa-pie-chart me-2"></i>Pie Chart</a>
+@endsection
+
+@section('chart')
 <center><div class="col-md-6">
     <?php 
         $jml = array();
@@ -22,7 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     {{-- identifikasi chart --}}
-    <canvas id="myChart" width="250" height="100"></canvas>
+    <canvas id="myChart"></canvas>
 
 
     {{-- proses --}}
@@ -52,8 +61,25 @@
             };
 
             const config = {
-                type: 'line',
+                type: 'doughnut',
                 data: data,
+                options: {
+                    maintainAspectRatio: false,
+                    tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                    },
+                    legend: {
+                    display: false
+                    },
+                    cutoutPercentage: 80,
+                },
             };
 
             const myChart = new Chart(
@@ -62,4 +88,8 @@
             );
     </script>
     </div>
+@endsection
+
+@section('card')
+@include('prodiChart.cardProdi')
 @endsection

@@ -22,7 +22,7 @@ top: 14px;
   @foreach ($datas as $data)
   <div class="item item1">
     <div style="float:left">
-      <div class="card">
+      <div class="card  shadow rounded" >
         <div class="card-header">
           <div class="icon icon-lg icon-shape bg-gradient-dark shadow text-center border-radius-xl mt-n4 position-absolute">
               <i class="fa fa-folder-open"></i>
@@ -32,9 +32,9 @@ top: 14px;
               <p >Total Penelitian: {{ $data->jumlah_penelitian }}</p>
           </div>
         </div>
-          <div class="card-body" style="background-color: #05445E">
+          <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" style="border-block-color: white; color: white;">
+              <table class="table table-bordered" style="border-block-color:  #05445E; color:  #05445E;">
                 <tbody>
                   <tr>
                     <td >Dasar : 
@@ -60,6 +60,13 @@ top: 14px;
                     </td>
                     <td>PLP:
                       @foreach ($plp as $item)
+                        @if ($item->tahun == $data->tahun)
+                            {{ $item->total }}
+                        @endif
+                      @endforeach
+                    </td>
+                    <td>Internasional:
+                      @foreach ($internasional as $item)
                         @if ($item->tahun == $data->tahun)
                             {{ $item->total }}
                         @endif

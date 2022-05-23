@@ -47,9 +47,11 @@
                 <td> {{ $nomer++ }} </td>
                 <td>{{ $penelitian->judul }}</td>
                 <td>
-                  <center><div class="btn btn-sm"
-                    style="background-color:{{ $border }}; color: white; font-weight: bold; cursor: default;">{{
-                    $penelitian->skema->nama }}</div></center>
+                  <center>
+                    <div class="btn btn-sm"
+                      style="background-color:{{ $border }}; color: white; font-weight: bold; cursor: default;">{{
+                      $penelitian->skema->nama }}</div>
+                  </center>
                 </td>
                 <td>
                   <ul>
@@ -58,7 +60,9 @@
                     @endforeach
                   </ul>
                 </td>
-                <td><center>{{ $penelitian->tahun }}</center></td>
+                <td>
+                  <center>{{ $penelitian->tahun }}</center>
+                </td>
                 <td class="text-center">
                   <a href="/data/{{ $penelitian->id }}"><i class="fa fa-eye" style="color: rgb(5, 67, 94);"></i></a>
                 </td>
@@ -80,7 +84,7 @@
   </div>
 </div>
 <script>
-//   $(document).ready(function () {
+  //   $(document).ready(function () {
 //   $('#dtOrder').DataTable({
 //     "aaSorting": [],
 //     columnDefs: [{

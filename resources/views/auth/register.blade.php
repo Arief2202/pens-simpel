@@ -428,16 +428,16 @@
       color: #333;
     }
 
-    
-select{
-    width: 350px ;
-    padding: 12px 15px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+
+    select {
+      width: 350px;
+      padding: 12px 15px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 
@@ -462,7 +462,7 @@ select{
             <div class="form-row">
               <div class="value">
                 <div class="input-group">
-                  <input class="input--style-5" type="text" name="NIP" placeholder="Masukkan NIP Pegawai">
+                  <input class="input--style-5" type="number" name="NIP" placeholder="Masukkan NIP Pegawai">
                 </div>
               </div>
             </div>
@@ -496,8 +496,9 @@ select{
                 </div>
               </div>
             </div>
+            <input class="input--style-5" type="text" name="role" value="dosen" hidden>
 
-         {{-- vid mintol edit tampilan dari input select ng bawah iki yo --}}
+            {{-- vid mintol edit tampilan dari input select ng bawah iki yo --}}
             <div class="form-group">
               <select class="form-control" aria-placeholder="halo" name="prodi_id" id="exampleFormControlSelect1">
                 <option value="">Pilih Prodi</option>
@@ -514,7 +515,7 @@ select{
                 <option value="perempuan">Perempuan</option>
               </select>
             </div>
-          {{-- end input select --}}
+            {{-- end input select --}}
 
 
 
@@ -549,8 +550,8 @@ select{
             </div> --}}
 
             <div class="form-row p-t-20  ">
-              <label class="label label--block">Dengan mengklik Daftar, Anda menyetujui <a href="">Ketentuan,
-                  Kebijakan Data</a> dan <a href="">Kebijakan Cookie</a> kami. Anda akan menerima
+              <label class="label label--block">Dengan mengklik Daftar, Anda menyetujui Ketentuan dan Kebijakan Data
+                dari kami. Anda akan menerima
                 Notifikasi SMS dari Simple dan dapat menolaknya kapan saja.</label>
             </div>
 

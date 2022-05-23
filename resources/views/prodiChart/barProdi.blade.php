@@ -1,5 +1,15 @@
-@extends('homeProdi')
-@section('chartProdi')
+@extends('home')
+
+@section('tema')
+Prodi
+@endsection
+
+@section('buttonchart')
+<a href="\barProdi" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;"><i class="fa fa-bar-chart me-2"></i>Bar Chart</a>
+<a href="\pieProdi" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;"><i class="fa fa-pie-chart me-2"></i>Pie Chart</a>
+@endsection
+
+@section('chart')
  
 <center><div class="col-md-6">
     <?php 
@@ -51,6 +61,14 @@
             type: 'bar',
             data: data,
             options: {
+                layout: {
+                        padding: {
+                            left: 10,
+                            right: 25,
+                            top: 25,
+                            bottom: 0
+                        }
+                    },
                 scales: {
                     y:{
                         beginAtZero: true
@@ -68,4 +86,8 @@
 
     </script>
 </div>
+@endsection
+
+@section('card')
+@include('prodiChart.cardProdi')
 @endsection

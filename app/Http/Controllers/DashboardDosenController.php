@@ -16,7 +16,9 @@ class DashboardDosenController extends Controller
     public function index()
     {
         //
-        return view('profileUser.profile');
+        return view('profile', [
+            'title' => 'Profile Saya'
+        ]);
     }
 
     /**
@@ -60,6 +62,7 @@ class DashboardDosenController extends Controller
     public function edit(Dosen $dosen)
     {
         //
+        // dd($dosen);
         $prodi = Prodi::all();
         return view('profileUser.editProfile', [
             'title' => 'Edit Profile',

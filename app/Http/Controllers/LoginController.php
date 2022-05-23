@@ -39,4 +39,10 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+    public function validation()
+    {
+        return view('logout', [
+            "title" => "Keluar Akun"
+        ]);
+    }
 }

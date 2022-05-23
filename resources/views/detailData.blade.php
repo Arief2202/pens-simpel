@@ -3,8 +3,7 @@
 @section('content')
 <div class="row mt-2 mb-2">
     <div class="col-md-12">
-        <a href="/data" class="btn btn-success me-2 mb-3 "><i class="fa fa-arrow-left"></i> kembali</a>
-        <div class="table-responsive">
+        <div class="table-responsive mt-2">
             <table class="table table-bordered">
                 <thead>
                     <tr style="color: #D4F1F4; background-color: #05445E">
@@ -81,6 +80,7 @@
         </table>
 
         {{-- <button class="btn-info"><a href="#"><i class="fa fa-download"></i> download abstract </a></button> --}}
+        <a href="/data" class="btn btn-light me-2 mb-3 "><i class="fa fa-arrow-left"></i> kembali</a>
     </div>
 </div>
 

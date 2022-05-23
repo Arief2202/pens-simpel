@@ -22,6 +22,7 @@ class DashboardChartController extends Controller
         $terapan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 2)->get();
         $unggulan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 3)->get();
         $plp = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 4)->get();
+        $internasional = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 5)->get();
 
 
 
@@ -34,6 +35,7 @@ class DashboardChartController extends Controller
             "terapan" => $terapan,
             "unggulan" => $unggulan,
             "plp" => $plp,
+            'internasional' => $internasional,
             "name" => "Tsania Ursila Razani",
         ]);
     }
@@ -49,6 +51,7 @@ class DashboardChartController extends Controller
         $terapan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 2)->get();
         $unggulan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 3)->get();
         $plp = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 4)->get();
+        $internasional = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,tahun'))->groupBy('tahun')->where('skema_id', 5)->get();
 
         return view('yearChart.pieYear', [
             "title" => "Beranda",
@@ -58,6 +61,7 @@ class DashboardChartController extends Controller
             "dasar" => $dasar,
             "terapan" => $terapan,
             "unggulan" => $unggulan,
+            "internasional" => $internasional,
             "plp" => $plp,
             "name" => "Tsania Ursila Razani",
         ]);
@@ -75,9 +79,10 @@ class DashboardChartController extends Controller
         $terapan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 2)->get();
         $unggulan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 3)->get();
         $plp = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 4)->get();
+        $internasional = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 5)->get();
 
 
-        
+
         return view('prodiChart.barProdi', [
             "title" => "Beranda",
             "dataProdi" => $dataProdi,
@@ -87,8 +92,8 @@ class DashboardChartController extends Controller
             "dasar" => $dasar,
             "terapan" => $terapan,
             "unggulan" => $unggulan,
+            "internasional" => $internasional,
             "plp" => $plp,
-            "name" => "Tsania Ursila Razani",
         ]);
     }
     public function pieChartProdi()
@@ -103,6 +108,7 @@ class DashboardChartController extends Controller
         $terapan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 2)->get();
         $unggulan = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 3)->get();
         $plp = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 4)->get();
+        $internasional = Penelitian::with(['skema'])->select(DB::raw('count(*) as total,prodi_id'))->groupBy('prodi_id')->where('skema_id', 5)->get();
         // dd($dasar);
 
         return view('prodiChart.pieProdi', [
@@ -114,8 +120,8 @@ class DashboardChartController extends Controller
             "dasar" => $dasar,
             "terapan" => $terapan,
             "unggulan" => $unggulan,
+            "internasional" => $internasional,
             "plp" => $plp,
-            "name" => "Tsania Ursila Razani",
         ]);
     }
 }

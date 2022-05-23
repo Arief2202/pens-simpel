@@ -18,9 +18,11 @@
                     <a href="/datatahun" class="nav-link" style="color: grey"><i class="fa fa-caret-right me-3" ></i><span class="d-none d-sm-inline">Berdasar Tahun</span></a>
                 </li> -->
                 <li>
-                    <a href="/dataprodi" class="nav-link"><i
-                            class="fa fa-caret-right me-3"></i><span class="d-none d-sm-inline">Berdasar
-                            Prodi</span></a>
+                    <form action="" method="post">
+                        
+                    </form>
+                    <a href="/dataprodi" class="nav-link"><i class="fa fa-caret-right me-3"></i><span
+                            class="d-none d-sm-inline">Temukan Data</span></a>
                 </li>
             </ul>
             <a href="/pengumuman" class="list-group-item border-end-0 d-inline-block text-truncate"
@@ -32,22 +34,22 @@
                 <i class="fa fa-user me-2"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                 <li class="w-100">
-                    <a href="/dashboard/dosen" class="nav-link"><i
-                            class="fa fa-caret-right me-3"></i><span class="d-none d-sm-inline">Lihat Profile</span></a>
+                    <a href="/profile" class="nav-link"><i class="fa fa-caret-right me-3"></i><span
+                            class="d-none d-sm-inline">Profile Saya</span></a>
                 </li>
                 <li>
-                    <a href="/dashboard/dosen/{{ auth()->user()->id }}/edit" class="nav-link"><i
-                            class="fa fa-caret-right me-3"></i></i><span class="d-none d-sm-inline">Edit
-                            Profile</span></a>
+                    <a href="/penelitianku/{{ auth()->user()->id }}" class="nav-link"><i
+                            class="fa fa-caret-right me-3"></i></i><span class="d-none d-sm-inline">Penelitian
+                            Saya</span></a>
                 </li>
             </ul>
-            <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i
+            <a href="/logout" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i
                     class="fa fa-sign-out me-2"></i><span class="ms-1 d-none d-sm-inline">Keluar</span></a>
         </div>
     </div>
 
     <div id="main">
-        {{-- <button class="openbtn" onclick="openNav()">☰ Tampilkan Menu</button> --}}
+        <button class="openbtn shadow rounded" onclick="openNav()">☰ Tampilkan Menu</button>
         @yield('content')
     </div>
 </div>
