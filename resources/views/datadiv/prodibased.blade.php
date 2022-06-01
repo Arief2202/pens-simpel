@@ -51,8 +51,8 @@
             <div class="card-header">
                 <form action="/dataprodi" method="get" class="pt-2 pb-2">
                     {{-- @csrf --}}
-                    <div class="row gx-4 gx-lg-5 h-100 align-items-center ">
-                        <div class="col-lg-3 d-flex flex-column">
+                    <div class="row align-items-center ">
+                        <div class="col-lg-2 d-flex flex-column">
                             <div class="select-box">
                                 <select id="select-box1" name="prodi" class="browser-default custom-select" data-size="3">
                                     <option data-list="all" value="" {{ ($data->prodi === '') ? 'selected' : '' }}>Semua
@@ -67,7 +67,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-3 d-flex flex-column">
+                        <div class="col-lg-2 d-flex flex-column">
                             <div class="select-box">
                                 <select id="select-box2" name="tahun" class="browser-default custom-select" data-size="3">
                                     <option data-list="all" value="" {{ ($data->tahun === '') ? 'selected' : '' }}>Semua
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 d-flex flex-column">
-                            <button type="submit" class="btn btn-light" style="border-color: #05445E">Dapatkan Data</button>
+                            <button type="submit" class="btn btn-success" style="border-color: #05445E; width: 50%">Dapatkan Data</button>
                         </div>
 
                 </form>
@@ -116,7 +116,7 @@
                         </div>
                         
                         <div class="card-footer">
-                            <a href="/filterprodi/{{ $item->prodi_id }}/{{ $item->tahun }}"
+                            <a href="/{{ $item->prodi_id }}/{{ $item->tahun }}"
                                 class="btn btn-light me-3" style="border-color: #05445E"><i class="fa fa-eye me-2"></i>buka</a>
                             <span>total penelitian : {{ $item->jumlah }}</span>
                         </div>

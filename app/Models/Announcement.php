@@ -6,7 +6,7 @@ use App\Models\Dosen;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class P3M extends Model
+class Announcement extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];

@@ -79,11 +79,13 @@ class DashboardPenelitianController extends Controller
     {
         // return $id;
         $study = Penelitian::where('prodi_id', $id)->where('tahun', $tahun)->get();
-
-        return view('data', [
+        $filter = ['id' => $id, 'tahun' => $tahun];
+        // return $filter['id'];
+        return view('allData', [
             "title" => "Data Penelitian  ",
             "name" => "Tsania Ursila Razani",
             "penelitians" => $study,
+            'filter' => $filter,
             "email" => "tsaniashella@it.student.pens.ac.id"
         ]);
     }

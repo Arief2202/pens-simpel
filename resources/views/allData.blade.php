@@ -11,7 +11,8 @@
             <h2>{{ $title }}</h2>
           </div>
           <div class="col-lg-6 col-5 my-auto text-end">
-            <a href="/export-penelitian" class="btn btn-success" style="font-size: 13px"><i class="fa fa-download me-2"></i>Export ke Excel</a>
+            <a href="/export-penelitian/{{ $filter['id'] }}/{{ $filter['tahun'] }}" class="btn btn-success" style="font-size: 13px">
+              <i class="fa fa-download me-2"></i>Export ke Excel</a>
           </div>
         </div>
       </div>
@@ -50,13 +51,13 @@
                                     ?>
 
 
-              <tr style="color: black">
+              <tr>
                 <td> {{ $nomer++ }} </td>
                 <td>{{ $penelitian->judul }}</td>
                 <td>
                   <center>
                     <div class="btn btn-sm"
-                      style="font-size: 14px; border-color:{{ $border }}; border-width:2px; color: {{ $border }}; font-weight: bold; cursor: default; width: 120px;">
+                      style="border-color:{{ $border }}; border-width:2px; color: {{ $border }}; font-weight: bold; cursor: default; width: 150px;">
                       {{
                       $penelitian->skema->nama }}</div>
                   </center>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+<nav class="navbar navbar-expand-md navbar-dark shadow fixed-top ">
     <div class="container-fluid align-items-center d-flex">
         <div class="flex-shrink-1">
             <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardChartController;
 use App\Http\Controllers\DashboardDosenController;
@@ -37,15 +38,15 @@ Route::get('/penelitianku/{dosen:id}', [DashboardPenelitianController::class, 's
 
 Route::get('/dataprodi', [DashboardPenelitianController::class, 'prodibased'])->middleware('auth');
 
-//manggil
-Route::get('/filterprodi/{id}/{tahun}', [DashboardPenelitianController::class, 'detail'])->middleware('auth');
 
 
 Route::get('/dataproditahun', [DashboardPenelitianController::class, 'filterPenelitian'])->middleware('auth');
+Route::get('/export-penelitian/{id}/{tahun}', [UserController::class, 'export'])->middleware('auth');
+Route::get('/export-penelitian', [UserController::class, 'exportAll'])->middleware('auth');
 Route::get('/dataprodi/{penelitian:prodi_id}', [DashboardPenelitianController::class, 'prodibasedData'])->middleware('auth');
 
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'index'])->middleware('auth');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
@@ -62,33 +63,26 @@ Route::get('/profile/{dosen:id}', [DosenController::class, 'edit'])->middleware(
 Route::put('/profile/{dosen:id}', [DosenController::class, 'update'])->middleware('auth');
 
 
-Route::get('/pengumuman', function () {
-    return view('announcement', [
-        "title" => "Pengumuman",
-        "name" => "Tsania Ursila Razani",
-        "email" => "tsaniashella@it.student.pens.ac.id"
-    ]);
+Route::get('/kelolaUser', [UserController::class, 'showAll'])->middleware('auth');
+Route::delete('/user/{dosen:id}', [UserController::class, 'destroy'])->middleware('auth');
+
+
+Route::get('/pengumuman', [AnnouncementController::class, 'index'])->middleware('auth');
+Route::delete('/pengumuman/{announcement}', [AnnouncementController::class, 'destroy'])->middleware('auth');
+Route::get('/editpengumuman/{announcement}', [AnnouncementController::class, 'edit'])->middleware('auth');
+Route::put('/editpengumuman/{announcement}', [AnnouncementController::class, 'update'])->middleware('auth');
+Route::get('/semuapengumuman', [AnnouncementController::class, 'semuaPengumuman'])->middleware('auth');
+Route::post('/tambahpengumuman', [AnnouncementController::class, 'store'])->middleware('auth');
+Route::get('/tambahpengumuman', [AnnouncementController::class, 'indexadd'])->middleware('auth');
+Route::get('/detailpengumuman/{pengumuman:id}', [AnnouncementController::class, 'show'])->middleware('auth');;
+
+
+
+
+Route::get('/kelolapengumuman', function () {
+    return view('announcement.kelolaAnnouncement', ['title' => 'kelola Pengumuman']);
 });
 
 
-Route::get('/detailpengumuman', function () {
-    return view('detailAnnouncement', [
-        "title" => "Pengumuman",
-        "name" => "Tsania Ursila Razani",
-        "email" => "tsaniashella@it.student.pens.ac.id"
-    ]);
-});
-
-Route::get('/tambahpengumuman', function () {
-    return view('addAnnouncement', [
-        "title" => "Pengumuman",
-        "name" => "Tsania Ursila Razani",
-        "email" => "tsaniashella@it.student.pens.ac.id"
-    ]);
-});
-
-// Route::get('/logout', function () {
-//     return view('logout', [
-//         "title" => "Keluar Akun"
-//     ]);
-// });
+// Harus Paling Bawah
+Route::get('/{id}/{tahun}', [DashboardPenelitianController::class, 'detail'])->middleware('auth');

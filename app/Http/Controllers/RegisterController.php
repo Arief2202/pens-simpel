@@ -38,6 +38,6 @@ class RegisterController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
         Dosen::create($validatedData);
         // $request->session()->flash('success','Registrsi Berhasil silahkan Login');
-        return redirect('/login')->with('success', 'Registrsi Berhasil silahkan Login');
+        return redirect('/kelolaUser')->with('success', 'User Baru berhasil ditambahkan');
     }
 }

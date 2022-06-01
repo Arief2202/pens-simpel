@@ -477,7 +477,7 @@
             <div class="form-row">
               <div class="value">
                 <div class="input-group">
-                  <input class="input--style-5" type="text" name="no_telp" placeholder="No Telepon">
+                  <input class="input--style-5" type="number" name="no_telp" placeholder="No Telepon">
                 </div>
               </div>
             </div>
@@ -496,7 +496,7 @@
                 </div>
               </div>
             </div>
-            <input class="input--style-5" type="text" name="role" value="dosen" hidden>
+            {{-- <input class="input--style-5" type="text" name="role" value="dosen" hidden> --}}
 
             {{-- vid mintol edit tampilan dari input select ng bawah iki yo --}}
             <div class="form-group">
@@ -506,6 +506,14 @@
                 <option value="{{ $prodi->id }}">{{ $prodi->nama }}</option>
 
                 @endforeach
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="role" required>
+                <option value="">Pilih Role</option>
+                <option value="dosen">Dosen</option>
+                <option value="p3m">P3M</option>
               </select>
             </div>
 

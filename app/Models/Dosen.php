@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Prodi;
 use App\Models\Penelitian;
+use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -21,5 +22,10 @@ class Dosen extends Model
     public function penelitian()
     {
         return $this->belongsToMany(Penelitian::class);
+    }
+
+    public function pengumuman()
+    {
+        return $this->hasMany(Announcement::class);
     }
 }

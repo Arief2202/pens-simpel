@@ -5,8 +5,8 @@ Tahun
 @endsection
 
 @section('buttonchart')
-<a href="\home" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;"><i class="fa fa-bar-chart me-2"></i>Bar Chart</a>
-<a href="\pieYear" class="btn btn-light" role="button" style="border-color: grey; border-width: 2px;"><i class="fa fa-pie-chart me-2"></i>Pie Chart</a>
+<a href="\home" class="btn btn-light" role="button" style="border-color: rgb(236, 236, 236); border-width: 2px;"><i class="fa fa-bar-chart me-2"></i>Bar Chart</a>
+<a href="\pieYear" class="btn btn-light" role="button" style="border-color: rgb(236, 236, 236); border-width: 2px;"><i class="fa fa-pie-chart me-2"></i>Pie Chart</a>
 @endsection
 
 @section('chart')

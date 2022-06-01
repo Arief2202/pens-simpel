@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Announcement;
 use App\Models\Dosen;
 use App\Models\DosenPenelitian;
 use App\Models\Prodi;
 use App\Models\Skema;
 use App\Models\Penelitian;
+use App\Models\Pengumuman;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -457,17 +459,23 @@ class DatabaseSeeder extends Seeder
             "dosen_id" => 1,
             "penelitian_id" => 11,
         ]);
+        Announcement::create([
+            'dosen_id' => 4,
+            'judul' => 'Pengumuman Hasil Seleksi Penelitian dan Pengabdian kepada Masyarakat Gelombang 2 PENS 2022',
+            'gambar' => '../img/pens.jpg',
+            'isi' => 'Seleksi Proposal Penelitian Gelombang 2 untuk skema Hibah Politeknik Elektronika Negeri Surabaya Tahun 2022 telah selesai dilakukan. Berikut terlampir daftar proposal yang telah dinyatakan lolos seleksi oleh Reviewer. Kami mengucapkan selamat kepada para peneliti yang berhasil mendapatkan pendanaan',
+            'tanggal' => Carbon::parse('2020-01-10')->isoFormat('D MMMM Y'),
+        ]);
+        Announcement::create([
+            'dosen_id' => 4,
+            'judul' => 'Perpanjangan penerimaan proposal Upgrading Tugas Akhir s.d Tanggal 24 Mei 2022 Pukul 23.59',
+            'gambar' => '../img/pens.jpg',
+            'isi' => 'Perpanjangan penerimaan proposal Upgrading Tugas Akhir s.d Tanggal 24 Mei 2022 Pukul 23.59. Panduan dan template dapat diunduh pada dashboard setelah login SIMPEL',
+            'tanggal' => Carbon::parse('2020-01-10')->isoFormat('D MMMM Y'),
+        ]);
         DosenPenelitian::create([
             "dosen_id" => 2,
             "penelitian_id" => 11,
         ]);
-        // DosenPenelitian::create([
-        //     "dosen_id" => 1,
-        //     "penelitian_id" => 12,
-        // ]);
-        // DosenPenelitian::create([
-        //     "dosen_id" => 2,
-        //     "penelitian_id" => 12,
-        // ]);
     }
 }

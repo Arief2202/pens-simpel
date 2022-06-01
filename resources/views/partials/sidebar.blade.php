@@ -19,20 +19,50 @@
                 </li> -->
                 <li>
                     <form action="" method="post">
-                        
+
                     </form>
                     <a href="/dataprodi" class="nav-link"><i class="fa fa-caret-right me-3"></i><span
                             class="d-none d-sm-inline">Temukan Data</span></a>
                 </li>
             </ul>
+
+            @if (auth()->user()->role === 'dosen')
             <a href="/pengumuman" class="list-group-item border-end-0 d-inline-block text-truncate"
-                data-bs-parent="#sidebar"><i class="fa fa-bullhorn me-2"></i><span
-                    class="ms-1 d-none d-sm-inline">Pengumuman</span></a>
-            <div class="nav-logo disabled" style="padding: 5%; color:grey; font-weight: bolder">AKUN</div>
+                data-bs-parent="#sidebar"><i class="fa fa-caret-right me-3"></i><span
+                    class="ms-1 d-none d-sm-inline">Lihat Pengumuman</span></a>
+            @endif
+            @if (auth()->user()->role === 'p3m')
+            <a href="/kelolaUser" class="list-group-item border-end-0 d-inline-block text-truncate"
+                data-bs-parent="#sidebar"><i class="fa-solid fa-database"></i><span class="ms-3 d-none d-sm-inline">Data
+                    User</span></a>
+            @endif
+
+            @if (auth()->user()->role === 'p3m')
+
             <a href="#submenu2" data-bs-toggle="collapse"
                 class="list-group-item border-end-0 d-inline-block text-truncate">
-                <i class="fa fa-user me-2"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+                <i class="fa fa-bullhorn me-2"></i></i><span class="ms-1 d-none d-sm-inline">Pengumuman</span> </a>
             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                <li class="w-100">
+                    <a href="/pengumuman" class="nav-link"><i class="fa fa-caret-right me-3"></i><span
+                            class="d-none d-sm-inline">Lihat Pengumuman</span></a>
+                </li>
+
+                <li>
+                    <a href="/semuapengumuman" class="nav-link"><i class="fa fa-caret-right me-3"></i><span
+                            class="d-none d-sm-inline">Kelola Pengumuman</span></a>
+
+
+                </li>
+            </ul>
+            @endif
+
+            {{-- </ul> --}}
+            <div class="nav-logo disabled" style="padding: 5%; color:grey; font-weight: bolder">AKUN</div>
+            <a href="#submenu3" data-bs-toggle="collapse"
+                class="list-group-item border-end-0 d-inline-block text-truncate">
+                <i class="fa fa-user me-2"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                 <li class="w-100">
                     <a href="/profile" class="nav-link"><i class="fa fa-caret-right me-3"></i><span
                             class="d-none d-sm-inline">Profile Saya</span></a>
@@ -43,13 +73,14 @@
                             Saya</span></a>
                 </li>
             </ul>
-            <a href="/logout" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i
-                    class="fa fa-sign-out me-2"></i><span class="ms-1 d-none d-sm-inline">Keluar</span></a>
+            <a href="/logout" class="list-group-item border-end-0 d-inline-block text-truncate"
+                data-bs-parent="#sidebar"><i class="fa fa-sign-out me-2"></i><span
+                    class="ms-1 d-none d-sm-inline">Keluar</span></a>
         </div>
     </div>
 
     <div id="main">
-        <button class="openbtn shadow rounded" onclick="openNav()">☰ Tampilkan Menu</button>
+        <button class="openbtn rounded" onclick="openNav()">☰ Tampilkan Menu</button>
         @yield('content')
     </div>
 </div>

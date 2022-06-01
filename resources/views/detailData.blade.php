@@ -16,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="background-color: #D4F1F4;">
+                    <tr>
                         <td class="table-active">{{ $penelitian->skema->nama }}</td>
                         <td class="table-active">
                             <ul>
@@ -36,7 +36,8 @@
                 </tbody>
             </table>
         </div>
-        <table class="table table-bordered" style="background-color: #D4F1F4; color:#05445E">
+        <table class="table table-bordered" style="background-color: rgba(255, 255, 255, 0.477);
+        backdrop-filter: blur(5px); color:#05445E">
             <tbody>
                 <tr>
                     <td colspan="2" style="background-color: #05445E"></td>
@@ -80,7 +81,7 @@
         </table>
 
         {{-- <button class="btn-info"><a href="#"><i class="fa fa-download"></i> download abstract </a></button> --}}
-        <a href="/data" class="btn btn-light me-2 mb-3 "><i class="fa fa-arrow-left"></i> kembali</a>
+        {{-- <a href="/data" class="btn btn-light me-2 mb-3 "><i class="fa fa-arrow-left"></i> kembali</a> --}}
     </div>
 </div>
 
