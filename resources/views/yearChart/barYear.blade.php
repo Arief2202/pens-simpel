@@ -30,7 +30,7 @@ Tahun
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         {{-- identifikasi chart --}}
-        <canvas id="myChart" width="250" height="100"></canvas>
+        <canvas id="myChart" width="100"></canvas>
 
 
         {{-- proses --}}
@@ -46,10 +46,12 @@ Tahun
                     label: 'Total Penelitian',
                     data: jumlah,
                     backgroundColor: [
-                    '#05445E',
+                    // '#647C90',
+                    '#189AB4'
+                    // '#0C2D48'
                     // 'rgb(40, 178, 170)',
                     ],
-
+                    hoverBackgroundColor: "black",
                     borderWidth: 1
                 }]
             };
@@ -70,7 +72,19 @@ Tahun
                         y:{
                             beginAtZero: true,
                         },
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: "top",
+                            align: "start"
+                        },
+                        // title: {
+                        //     display: true,
+                        //     text: 'Penelitian Tahun ...-...'
+                        // }
                     }
+
                 },
             };
 

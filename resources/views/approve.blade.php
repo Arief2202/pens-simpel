@@ -10,19 +10,24 @@
           <div class="col-lg-6 col-7">
             <h2>{{ $title }}</h2>
           </div>
-          <div class="col-lg-6 col-5 my-auto text-end">
-            <a href="/dataprodi" class="btn btn-info" style="font-size: 13px"><i
-              class="fa fa-search me-2"></i>Filter Data</a>
-            <a href="/export-penelitian" class="btn btn-success" style="font-size: 13px"><i
-                class="fa fa-download me-2"></i>Export ke Excel</a>
-          </div>
+
         </div>
       </div>
       <div class="card-6">
         <div class="card-body p-0"></div>
       </div>
       <div class="card-body" style="background-color: white">
+
         <div class="table-responsive">
+          @if (session()->has('successApprove'))
+          <div class="alert alert-success alert-dismissible fade show col-md-6 mx-auto" role="alert">
+            <strong>{{ session('successApprove') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          @endif
           <table id="dtOrder" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
               <tr>
@@ -31,12 +36,7 @@
                 <th class="th-sm">SKEMA</th>
                 <th class="th-sm">KETUA PENELITIAN</th>
                 <th class="th-sm">ANGGOTA</th>
-                @if (!$tandaHalaman)
-                <th class="th-sm">TAHUN</th>
-                @endif
-                @if ($tandaHalaman)
-                <th>Tambah Anggota</th>
-                @endif
+                <th class="th-sm">APPROVAL</th>
                 <th class="th-sm">DETAIL</th>
               </tr>
             </thead>
@@ -87,19 +87,27 @@
                     @endforeach
                   </ul>
                 </td>
-                @if (!$tandaHalaman)
-                <td>
-                  <center>{{ $penelitian->tahun }}</center>
-                </td>
-                @endif
-                @if ($tandaHalaman)
-                <td>
-                  @if (auth()->user()->id == $penelitian->dosen_id)
 
-                  <a href="/tambahAnggota2/{{ $penelitian->id }}"><i class="fa-solid fa-circle-plus"></i></a>
-                  @endif
+                <td class="text-center">
+                  <div class="d-flex justify-content-between">
+                    <form action="/dataApprove/{{ $penelitian->id }}" method="post" class="mr-2">
+                      @method('put')
+                      @csrf
+                      <input type="text" name="status" value="disetujui" hidden>
+                      <button class="badge bg-success border-0 p-2"
+                        onclick="return confirm('Apakah Anda Yakin Ingin Menyetujui penelitian Tersebut??')"><i
+                          class="fa-solid fa-check me-2" style="width: 15px"></i>Setuju</button>
+                    </form>
+                    <form action="/dataApprove/{{ $penelitian->id }}" method="post">
+                      @method('put')
+                      @csrf
+                      <input type="text" name="status" value="ditolak" hidden>
+                      <button class="badge bg-danger border-0 p-2"
+                        onclick="return confirm('Apakah Anda Yakin Ingin Menolak penelitian Tersebut??')"><i
+                          class="fa-solid fa-xmark me-2" style="width: 15px"></i> Tolak</button>
+                    </form>
+                  </div>
                 </td>
-                @endif
                 <td class="text-center">
                   <a href="/data/{{ $penelitian->id }}"><i class="fa fa-eye" style="color: rgb(5, 67, 94);"></i></a>
                 </td>
@@ -126,17 +134,7 @@
   }
 </style>
 <script>
-  //   $(document).ready(function () {
-//   $('#dtOrder').DataTable({
-//     "aaSorting": [],
-//     columnDefs: [{
-//     orderable: false,
-//     targets: [0, 5]
-//     }]
-//   });
-//   $('.dataTables_length').addClass('bs-select');
-// });
-$(document).ready(function () {
+  $(document).ready(function () {
   $('#dtOrder').DataTable({
     lengthMenu: [
             [5 , 10, 15, -1],
@@ -146,7 +144,7 @@ $(document).ready(function () {
     "aaSorting": [],
     columnDefs: [{
     orderable: false,
-    targets: [6]
+    targets: [5, 6]
     }]
   });
     $('.dataTables_length').addClass('bs-select');

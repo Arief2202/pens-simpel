@@ -2,11 +2,12 @@
 
 @section('content')
 <div class="mt-2 mb-2">
-  <div class="card border-0 shadow rounded">
-    <div class="card-header">
-      <h2>{{ $title }}</h2>
-    </div>
-    <div class="card-body">
+  <div class="card border-2 shadow rounded" style="background-color: rgba(177, 233, 255, 0.155); backdrop-filter: blur(3px);">
+      <div class="card-header" >
+        <h2>{{ $title }}</h2>
+      </div>
+      <div class="card-6"><div class="card-body p-0"></div></div>
+      <div class="card-body" style="background-color: white">
       <div class="row mt-2 mb-4">
         <div class="col-md-2">
           <center>
@@ -17,22 +18,22 @@
           @endif
           </center>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-8">
           <ul>
-              <li>
-                  <p><b>Nama : </b>{{ auth()->user()->nama }}</p>
+              <li class="row">
+                  <p class="col-md-3"><b>Nama </b></p><p class="col-md-auto">: {{ auth()->user()->nama }}</p>
               </li>
-              <li>
-                  <p><b>NIP : </b>{{ auth()->user()->NIP }}</p>
+              <li class="row">
+                <p class="col-md-3"><b>NIP </b></p><p class="col-md-auto">: {{ auth()->user()->NIP }}</p>
               </li>
-              <li>
-                  <p><b>Alamat : </b>{{ auth()->user()->alamat }}</p>
+              <li class="row">
+                <p class="col-md-3"><b>Alamat </b></p><p class="col-md-auto">: {{ auth()->user()->alamat }}</p>
               </li>
-              <li>
-                  <p><b>Gender : </b>{{ auth()->user()->gender }}</p>
+              <li class="row">
+                <p class="col-md-3"><b>Gender </b></p><p class="col-md-auto">: {{ auth()->user()->gender }}</p>
               </li>
-              <li>
-                  <p><b>Nomer Telepon : </b>{{ auth()->user()->no_telp }}</p>
+              <li class="row">
+                <p class="col-md-3"><b>Nomor Telepon </b></p><p class="col-md-auto">: {{ auth()->user()->no_telp }}</p>
               </li>
           </ul>
         </div>

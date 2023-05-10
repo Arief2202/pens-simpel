@@ -80,12 +80,19 @@ class AnnouncementController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
+        // return $request->file('gambar')->store('pengumuman-image');
         $validData = $request->validate([
             'judul' => 'required',
             'isi' => 'required',
             'gambar' => 'required',
+            // 'gambar' => 'image|file|max:1024',
             'dosen_id' => 'required',
         ]);
+
+        // if ($request->file('gambar')) {
+        //     $validData['gambar'] = $request->file('gambar')->store('pengumuman-image');
+        // }
         $validData['tanggal'] = Carbon::now()->isoFormat('D MMMM Y');
         Announcement::create($validData);
         return redirect('pengumuman');

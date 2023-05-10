@@ -17,6 +17,7 @@ class RegisterController extends Controller
         return view('auth.register', [
             'nama' => 'andrian',
             'prodis' => $prodi,
+            'title' => 'Tambah User',
         ]);
     }
 
@@ -25,7 +26,7 @@ class RegisterController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'nama' => 'required',
-            'NIP' => 'required|numeric|unique:dosens',
+            'NIP' => 'required|numeric',
             'email' => 'required|email:dns|unique:dosens',
             'password' => 'required',
             'gender' => 'required',

@@ -2,20 +2,29 @@
     <?php $nomer = 1;?>
     <thead>
         <tr>
-            <th>Nomer</th>
-            <th width="600px"><Strong> Judul</Strong></th>
-            <th width="200px"><Strong> Skema</Strong></th>
-            <th width="200px"><strong> Ketua Penelitian</strong></th>
-            <th width="200px"><strong> Anggota</strong></th>
+            <th colspan="6" style="text-align: center;" height="20">
+                <center><strong> {{ $judul }} </strong></center>
+            </th>
+        </tr>
+        <tr>
+            <th width="10"><strong> Nomer </strong></th>
+            <th>
+                <center> <Strong> Judul</Strong> </center>
+            </th>
+            <th><Strong> Skema</Strong></th>
+            <th><strong> Ketua Penelitian</strong></th>
+            <th><strong> Anggota</strong></th>
             <th><strong> Tahun</strong></th>
         </tr>
-    </thead>
+    </thead>\
     <tbody>
 
         @foreach($penelitians as $penelitian)
         <tr>
             <td>{{ $nomer++ }}</td>
-            <td>{{ $penelitian->judul }}</td>
+            <td>
+                <center> {{ $penelitian->judul }} </center>
+            </td>
             <td>{{ $penelitian->skema->nama }}</td>
             <td>
                 <ul>

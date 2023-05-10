@@ -12,14 +12,23 @@ class DosenController extends Controller
     public function index()
     {
         //
+
         return view('profile', [
             'title' => 'Profile Saya'
+        ]);
+    }
+    public function detail(Dosen $dosen)
+    {
+        //
+
+        return view('profileUser.detailProfile', [
+            'title' => 'Profile ' . $dosen->nama,
+            'dosen' => $dosen,
         ]);
     }
     public function edit(Dosen $dosen)
     {
         //
-        // dd($dosen);
         $prodi = Prodi::all();
         return view('profileUser.editProfile', [
             'title' => 'Edit Profile',
@@ -36,6 +45,7 @@ class DosenController extends Controller
             'alamat' => 'required',
             'no_telp' => 'required',
             'prodi_id' => 'required',
+            'email' => 'required',
         ];
         if ($request->NIP != $dosen->NIP) {
             $rules['NIP'] = 'required|digits:18|numeric|unique:dosens';
@@ -45,6 +55,6 @@ class DosenController extends Controller
 
         Dosen::where('id', $dosen->id)
             ->update($validatedData);
-        return back()->with('successEditProfile', 'Profil Berhasil Diubah');
+        return redirect('/kelolaUser')->with('successEditProfile', 'Profil User Berhasil Diubah');
     }
 }

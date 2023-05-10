@@ -49,10 +49,12 @@ Prodi
                 label: 'Total Penelitian',
                 data: jumlah,
                 backgroundColor: [
-                    '#05445E',
-                // 'rgb(40, 178, 170)',
+                // '#647C90',
+                '#189AB4'
+                    // '#0C2D48'
+                    // 'rgb(40, 178, 170)',
                 ],
-
+                hoverBackgroundColor: "black",
                 borderWidth: 1
             }]
         };
@@ -73,6 +75,17 @@ Prodi
                     y:{
                         beginAtZero: true
                     }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: "top",
+                        align: "start"
+                    },
+                    // title: {
+                    //     display: true,
+                    //     text: 'Penelitian Tahun ...-...'
+                    // }
                 }
             }
         };

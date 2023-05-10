@@ -62,7 +62,7 @@
 .form-row .name {
     width: 180px;
     color: #000000;
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: 700;
     margin-top: 15px;
 
@@ -116,26 +116,6 @@ html {
     min-height: 100vh;
 }
 
-/* body {
-    font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    font-family: inherit;
-} */
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 400;
-}
-
-h2 {
-    font-weight: 700;
-} */
-
 .p-t-100 {
     padding-top: 20px;
 }
@@ -175,7 +155,7 @@ h2 {
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
     cursor: pointer;
-    font-size: 15px;
+    /* font-size: 15px; */
     text-transform: capitalize;
     font-weight: 700;
     color: #fff;
@@ -218,7 +198,7 @@ input[type="date" i] {
 
 .table-condensed td,
 .table-condensed th {
-    font-size: 14px;
+    /* font-size: 14px; */
     font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
     font-weight: 400;
 }
@@ -252,7 +232,7 @@ input[type="date" i] {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    font-size: 14px;
+    /* font-size: 14px; */
     padding: 5px;
     outline: none;
 }
@@ -269,7 +249,7 @@ textarea {
     -moz-box-shadow: none;
     box-shadow: none;
     width: 100%;
-    font-size: 14px;
+    /* font-size: 14px; */
     font-family: inherit;
 }
 
@@ -351,7 +331,7 @@ textarea {
 }
 
 .label--desc {
-    font-size: 13px;
+    /* font-size: 13px; */
     color: #999;
     margin-top: 10px;
 }
@@ -367,7 +347,7 @@ textarea {
 }
 
 .input-file+label {
-    font-size: 15px;
+    /* font-size: 15px; */
     color: #fff;
     color: white;
     line-height: 45px;
@@ -391,7 +371,7 @@ textarea {
 }
 
 .input-file__info {
-    font-size: 15px;
+    /* font-size: 15px; */
     color: #666;
 }
 
@@ -407,7 +387,7 @@ textarea {
    #TITLE
    ========================================================================== */
 .title {
-    font-size: 36px;
+    /* font-size: 36px; */
     font-weight: 700;
     text-align: left;
     color: rgb(0, 0, 0);

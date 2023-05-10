@@ -10,7 +10,7 @@ Prodi
 @endsection
 
 @section('chart')
-<center><div class="col-md-6">
+<center><div class="p-2">
     <?php 
         $jml = array();
         $prodi = array();
@@ -18,7 +18,7 @@ Prodi
             array_push($jml, $data->jumlah);
         }
         foreach ($prodis as $data ) {
-            array_push($prodi, $data->nama);
+            array_push($prodi, 'Jumlah Penelitian ' . $data->nama);
         }
 
     ?>
@@ -45,16 +45,22 @@ Prodi
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'My First Dataset',
+                    label: 'jumlah penelitian',
                     data: jumlah,
                     backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(220,20,60)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(34, 139, 35)',
-                    'rgb(30, 144, 255)',
-                    'rgb(60, 179, 113)',
+                    // 'rgb(255, 99, 132)',
+                    // 'rgb(220,20,60)',
+                    // 'rgb(54, 162, 235)',
+                    // 'rgb(255, 205, 86)',
+                    // 'rgb(34, 139, 35)',
+                    // 'rgb(30, 144, 255)',
+                    // 'rgb(60, 179, 113)',
+                    '#055C9D',
+                    '#189AB4',
+                    '#75E6DA',
+                    '#D4F1F4',
+                    '#647C90',
+                    '#A3EBB1',
                     ],
                     hoverOffset: 4
                 }]
@@ -66,17 +72,24 @@ Prodi
                 options: {
                     maintainAspectRatio: false,
                     tooltips: {
-                    backgroundColor: "rgb(255,255,255)",
-                    bodyFontColor: "#858796",
-                    borderColor: '#dddfeb',
-                    borderWidth: 1,
-                    xPadding: 15,
-                    yPadding: 15,
-                    displayColors: false,
-                    caretPadding: 10,
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyFontColor: "#858796",
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        xPadding: 15,
+                        yPadding: 15,
+                        displayColors: false,
+                        caretPadding: 10,
                     },
-                    legend: {
-                    display: false
+                    plugins: {
+                        legend: {
+                            position: 'left',
+                            align: 'start',
+                        },
+                        // title: {
+                        //     display: true,
+                        //     text: 'Chart.js Doughnut Chart'
+                        // }
                     },
                     cutoutPercentage: 80,
                 },
@@ -87,7 +100,7 @@ Prodi
                 config
             );
     </script>
-    </div>
+</div>
 @endsection
 
 @section('card')

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="card mt-3 mb-3">
+<div class="card mt-3 mb-3 shadow" style="background-color: rgba(255, 255, 255, 0.477); backdrop-filter: blur(3px);">
     <div class="container">
         <div class="row mt-3 p-3">
             <div class="col-md-12">

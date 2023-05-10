@@ -20,12 +20,12 @@
   ?>
 
   <div class="col-md-8 mt-2">
-    <div class="card border-0 shadow rounded">
+    <div class="card border-2 shadow rounded" style="background-color: rgba(177, 233, 255, 0.155); backdrop-filter: blur(3px);">
       <div class="card-header">
         <h2>Pengumuman Terkait Penelitian PENS</h2>
       </div>
-      <div class="card-body pt-4 p-3 hero-img ">
-
+      <div class="card-6"><div class="card-body p-0"></div></div>
+      <div class="card-body pt-4 p-4 hero-img"  style="background-color: white">
         @foreach ($pengumumans as $pengumuman)
         <div class="row align-items-center justify-content-center mb-3">
           <div class="col-lg-4 d-flex flex-column justify-content-center">
@@ -46,7 +46,7 @@
     </div>
   </div>
   <div class="col-md-4 mt-2">
-    <div class="card border-0 shadow rounded h-100 mb-4">
+    <div class="card border-2 shadow rounded" style="background-color: rgba(177, 233, 255, 0.155); backdrop-filter: blur(3px);">
       <div class="card-header pt-2 pb-2 px-3">
         <div class="row">
           <center>
@@ -54,7 +54,8 @@
           </center>
         </div>
       </div>
-      <div class="card-body pt-4 p-4">
+      <div class="card-6"><div class="card-body p-0"></div></div>
+      <div class="card-body pt-4 p-4 text-justify" style="background-color: white">
         {{-- <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3"> --}}
           <h6 class="text-xs font-weight-bolder mb-3" style="color: #05445E; text-transform: capitalize;">
             {{ $pertama->judul }}

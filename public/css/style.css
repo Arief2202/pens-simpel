@@ -2,7 +2,7 @@ body {
   font-size: 100%;
   padding-top: 3.5rem;
   /* background-color: rgb(236, 236, 236); */
-  background:url(../img/bg2.png) no-repeat;
+  background:url(../img/bg3.png) no-repeat;
   background-size: 100% 100%;
   background-attachment:fixed;
 }
@@ -73,9 +73,9 @@ h2 {
 }
 
 .shadow1 {
-  -moz-box-shadow: inset 0 0 10px #bdcacc;
-  -webkit-box-shadow: inset 0 0 10px #bdcacc;
-  box-shadow: inset 0 0 50px #bdcacc;
+  -moz-box-shadow: inset 0 0 10px #dbf2f6;
+  -webkit-box-shadow: inset 0 0 10px #dbf2f6;
+  box-shadow: inset 0 0 50px #dbf2f6;
   transition: 0.5s;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -130,17 +130,17 @@ h2 {
 }
 
 .openbtn {
-  /* cursor: pointer;
+  cursor: pointer;
   background-color: white;
   color: #05445E;
   padding: 10px 15px;
-  border: none; */
-  cursor: pointer;
+  border: none;
+  /* cursor: pointer;
   background-color: rgba(255, 255, 255, 0.234);
   backdrop-filter: blur(2px);
   color: #05445E;
   padding: 10px 15px;
-  border: #05445E;
+  border: #05445E; */
 }
 
 .openbtn:hover {

@@ -9,6 +9,8 @@ use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PenelitianController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 
@@ -33,8 +35,18 @@ Route::get('/pieProdi', [DashboardChartController::class, 'pieChartProdi'])->mid
 
 
 Route::get('/data', [DashboardPenelitianController::class, 'index'])->middleware('auth');
+Route::get('/dataApprove', [DashboardPenelitianController::class, 'approve'])->middleware('auth');
+Route::put('/dataApprove/{penelitian:id}', [DashboardPenelitianController::class, 'approveEdit'])->middleware('auth');
 Route::get('/data/{penelitian:id}', [DashboardPenelitianController::class, 'show'])->middleware('auth');
 Route::get('/penelitianku/{dosen:id}', [DashboardPenelitianController::class, 'showPenelitianku'])->middleware('auth');
+Route::delete('/penelitianku/{penelitian:id}', [DashboardPenelitianController::class, 'destroy'])->middleware('auth');
+Route::get('/tambahPenelitian', [PenelitianController::class, 'create'])->middleware('auth');
+Route::post('/tambahPenelitian', [PenelitianController::class, 'store'])->middleware('auth');
+Route::get('/tambahAnggota', [PenelitianController::class, 'create2'])->middleware('auth');
+Route::get('/tambahAnggota2/{penelitian:id}', [PenelitianController::class, 'tambahAnggota'])->middleware('auth');
+Route::post('/tambahAnggota2', [PenelitianController::class, 'tambah'])->middleware('auth');
+Route::post('/tambahAnggota', [PenelitianController::class, 'store2'])->middleware('auth');
+
 
 Route::get('/dataprodi', [DashboardPenelitianController::class, 'prodibased'])->middleware('auth');
 
@@ -49,6 +61,9 @@ Route::get('/dataprodi/{penelitian:prodi_id}', [DashboardPenelitianController::c
 Route::get('/register', [RegisterController::class, 'index'])->middleware('auth');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/tambah-user', [RegisterController::class, 'index'])->middleware('auth');
+Route::post('/tambah-user', [RegisterController::class, 'store']);
+
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -59,8 +74,16 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // Route::resource('/profile', DashboardDosenController::class)->middleware('auth');
 
 Route::get('/profile', [DosenController::class, 'index'])->middleware('auth');
+Route::get('/detailProfile/{dosen:id}', [DosenController::class, 'detail'])->middleware('auth');
 Route::get('/profile/{dosen:id}', [DosenController::class, 'edit'])->middleware('auth');
 Route::put('/profile/{dosen:id}', [DosenController::class, 'update'])->middleware('auth');
+
+Route::get('/kelolaProdi', [ProdiController::class, 'index'])->middleware('auth');
+Route::get('/addProdi', [ProdiController::class, 'create'])->middleware('auth');
+Route::post('/addProdi', [ProdiController::class, 'store'])->middleware('auth');
+Route::delete('/addProdi/{prodi:id}', [ProdiController::class, 'destroy'])->middleware('auth');
+Route::get('/editProdi/{prodi:id}', [ProdiController::class, 'edit'])->middleware('auth');
+Route::post('/editProdi/{prodi:id}', [ProdiController::class, 'update'])->middleware('auth');
 
 
 Route::get('/kelolaUser', [UserController::class, 'showAll'])->middleware('auth');

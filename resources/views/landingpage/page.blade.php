@@ -7,6 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>SIMPEL</title>
+    <link rel="icon" href="{{asset('../img/icon.png')}}">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap Icons-->
@@ -67,13 +68,8 @@
                     <div data-aos="fade-up" data-aos-delay="600">
                         <div class="col-lg-8 align-self-baseline">
                             <a class="btn btn-primary btn-xl" style="width: 49%; background-color:#FF8A00"
-                                href="/login">login dosen</a>
-                            <a class="btn btn-primary btn-xl" style="width: 49%; background-color:#FF8A00"
-                                href="/login">login p3m</a>
-                            <div class="row-lg pt-3 pb-3">
-                                <a class="btn btn-primary btn-xl" style="width: 100%; background-color:#FF8A00"
-                                    href="/register">register super user</a>
-                            </div>
+                                href="/login">login</a>
+
                         </div>
                     </div>
                 </div>
@@ -135,64 +131,66 @@
     </section>
     <!-- Dokumentasi-->
     <div id="portfolio">
+        {{-- Portfolio --}}
         <div class="container-fluid p-0">
-            <div class="row g-0">
+            <div class="col g-0">
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="../img/pens.jpg" title="nama agenda">
-                        <img class="img-fluid" src="../img/pens.jpg" alt="..." />
+                    <a class="portfolio-box" href="https://api.jatimnet.com/jinet/assets/media/news/news/image_front/JATIMNET.COM_PENS.jpg" title="5 peneliti PENS raih juara 1 di Penelitian Terapan Tingkat Nasional 2021">
+                        <img class="img" width="100%" height="300px"src="https://api.jatimnet.com/jinet/assets/media/news/news/image_front/JATIMNET.COM_PENS.jpg" alt="..." />
                         <div class="portfolio-box-caption">
                             <div class="project-category text-white-50">Agenda</div>
-                            <div class="project-name">nama agenda</div>
+                            <div class="project-name">5 peneliti PENS raih juara 1 Penelitian Terapan Tingkat Nasional 2021</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="../img/pens.jpg" title="nama agenda">
-                        <img class="img-fluid" src="../img/pens.jpg" alt="..." />
+                    <a class="portfolio-box" href="https://lppm.ub.ac.id/wp-content/uploads/DSC01168-400x267.jpg" title="P3M PENS melakukan studi banding ke LPPM UB">
+                        <img class="img" width="100%" height="300px" src="https://lppm.ub.ac.id/wp-content/uploads/DSC01168-400x267.jpg" alt="..." />
                         <div class="portfolio-box-caption">
                             <div class="project-category text-white-50">Agenda</div>
-                            <div class="project-name">nama agenda</div>
+                            <div class="project-name">P3M PENS melakukan studi banding ke LPPM UB</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="../img/pens.jpg" title="nama agenda">
-                        <img class="img-fluid" src="../img/pens.jpg" alt="..." />
+                    <a class="portfolio-box" href="https://www.pens.ac.id/wp-content/uploads/2020/02/WEB.jpg" title="Pelatihan POC (Proof of Concept) IoT oleh P3M PENS">
+                        <img class="img" width="100%" height="300px" src="https://www.pens.ac.id/wp-content/uploads/2020/02/WEB.jpg" alt="..." />
                         <div class="portfolio-box-caption">
                             <div class="project-category text-white-50">Agenda</div>
-                            <div class="project-name">nama agenda</div>
+                            <div class="project-name">Pelatihan POC (Proof of Concept) IoT oleh P3M PENS</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="../img/pens.jpg" title="nama agenda">
-                        <img class="img-fluid" src="../img/pens.jpg" alt="..." />
+                    <a class="portfolio-box" href="https://www.pens.ac.id/wp-content/uploads/2018/10/web-1080x675.jpg" title="P3M PENS menyelenggarakan Monev Penlok">
+                        <img class="img" width="100%" height="300px" src="https://www.pens.ac.id/wp-content/uploads/2018/10/web-1080x675.jpg" alt="..." />
                         <div class="portfolio-box-caption">
                             <div class="project-category text-white-50">Agenda</div>
-                            <div class="project-name">nama agenda</div>
+                            <div class="project-name">P3M PENS menyelenggarakan Monev Penlok</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="../img/pens.jpg" title="nama agenda">
-                        <img class="img-fluid" src="../img/pens.jpg" alt="..." />
+                    <a class="portfolio-box" href="https://cdn.timesmedia.co.id/images/2021/12/16/PENS.jpg" title="PENS raih juara 1 Penelitian Terapan Tingkat Nasional 2021">
+                        <img class="img" width="100%" height="300px" src="https://cdn.timesmedia.co.id/images/2021/12/16/PENS.jpg" alt="..." />
                         <div class="portfolio-box-caption">
                             <div class="project-category text-white-50">Agenda</div>
-                            <div class="project-name">nama agenda</div>
+                            <div class="project-name">PENS raih juara 1 Penelitian Terapan Tingkat Nasional 2021</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="../img/pens.jpg" title="nama agenda">
-                        <img class="img-fluid" src="../img/pens.jpg" alt="..." />
+                    <a class="portfolio-box" href="../img/pens.jpg" title="Politeknik Elektronika Negeri Surabaya">
+                        <img class="img" width="100%" height="300px" src="../img/pens.jpg" alt="..." />
                         <div class="portfolio-box-caption p-3">
                             <div class="project-category text-white-50">Agenda</div>
-                            <div class="project-name">nama agenda</div>
+                            <div class="project-name">Politeknik Elektronika Negeri Surabaya</div>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
+        {{-- End Portfolio --}}
     </div>
     <!-- Masukan-->
     <section class="page-section" id="masukan">
@@ -267,7 +265,7 @@
     <!-- Footer-->
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; 2022 - RPL A5</div>
+            <div class="small text-center text-muted">Copyright &copy; 2022 - Sistem Penelitian Pens</div>
         </div>
     </footer>
     <!-- Bootstrap core JS-->

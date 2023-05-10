@@ -10,15 +10,14 @@ Tahun
 @endsection
 
 @section('chart')
-<center>
-    <div class="col-md-6">
+<center><div class="p-2">
         {{-- convert data ke array --}}
         <?php 
         $jml = array();
         $thn = array();
         foreach ($datas as $data ) {
-            array_push($jml, $data->jumlah_penelitian);
-            array_push($thn, 'penelitian pada tahun '.$data->tahun);
+            array_push($jml, $data->jumlah_penelitian );
+            array_push($thn, 'Jumlah Penelitian Tahun '. $data->tahun);
         }
         array_push($jml,0);
     ?>
@@ -44,16 +43,22 @@ Tahun
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'My First Dataset',
+                    label: 'jumlah penelitian',
                     data: jumlah,
                     backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(220,20,60)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(34, 139, 35)',
-                    'rgb(30, 144, 255)',
-                    'rgb(60, 179, 113)',
+                    // 'rgb(255, 99, 132)',
+                    // 'rgb(220,20,60)',
+                    // 'rgb(54, 162, 235)',
+                    // 'rgb(255, 205, 86)',
+                    // 'rgb(34, 139, 35)',
+                    // 'rgb(30, 144, 255)',
+                    // 'rgb(60, 179, 113)',
+                    '#055C9D',
+                    '#189AB4',
+                    '#75E6DA',
+                    '#D4F1F4',
+                    '#647C90',
+                    '#A3EBB1',
                     ],
                     hoverOffset: 4
                 }]
@@ -65,17 +70,24 @@ Tahun
                 options: {
                     maintainAspectRatio: false,
                     tooltips: {
-                    backgroundColor: "rgb(255,255,255)",
-                    bodyFontColor: "#858796",
-                    borderColor: '#dddfeb',
-                    borderWidth: 1,
-                    xPadding: 15,
-                    yPadding: 15,
-                    displayColors: false,
-                    caretPadding: 10,
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyFontColor: "#858796",
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        xPadding: 15,
+                        yPadding: 15,
+                        displayColors: false,
+                        caretPadding: 10,
                     },
-                    legend: {
-                    display: false
+                    plugins: {
+                        legend: {
+                            position: 'left',
+                            align: 'start',
+                        },
+                        // title: {
+                        //     display: true,
+                        //     text: 'Penelitian tahun ...-...',
+                        // }
                     },
                     cutoutPercentage: 80,
                 },

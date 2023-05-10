@@ -33,8 +33,8 @@ class UserController extends Controller
 
     public function export($id, $tahun)
     {
-        $penelitian = Penelitian::where('prodi_id', $id)->where('tahun', $tahun)->get();
-        return Excel::download(new PenelitianExport($penelitian), 'Penelitian.xlsx');
+        $penelitian = Penelitian::where('prodi_id', $id)->where('tahun', $tahun)->where('status', 'disetujui')->get();
+        return Excel::download(new PenelitianExport($penelitian, $id, $tahun), 'Penelitian.xlsx');
     }
     public function exportAll()
     {

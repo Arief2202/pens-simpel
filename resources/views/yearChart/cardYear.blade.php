@@ -22,9 +22,9 @@ top: 14px;
   @foreach ($datas as $data)
   <div class="item item1">
     <div style="float:left">
-      <div class="card  shadow rounded" >
-        <div class="card-header">
-          <div class="icon icon-lg icon-shape bg-gradient-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+      <div class="card  shadow rounded" style="cursor: default">
+        <div class="card-header" style="background-color: white">
+          <div class="icon icon-lg icon-shape bg-gradient-dark shadow text-center border-radius-xl mt-n4 position-absolute" style="background-color: #05445E;">
               <i class="fa fa-folder-open"></i>
           </div>
           <div class="text-end pt-1">
@@ -32,7 +32,7 @@ top: 14px;
               <p >Total Penelitian: {{ $data->jumlah_penelitian }}</p>
           </div>
         </div>
-          <div class="card-body">
+          <div class="card-body" style="background-color: white">
             <div class="table-responsive">
               <table class="table table-bordered" style="border-block-color:  #05445E; color:  #05445E;">
                 <tbody>

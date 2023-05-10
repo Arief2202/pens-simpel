@@ -16,9 +16,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="table-active">{{ $penelitian->skema->nama }}</td>
-                        <td class="table-active">
+                    <tr style="background-color: rgba(255, 255, 255, 0.477);
+                    backdrop-filter: blur(5px); color:#05445E">
+                        <td>{{ $penelitian->skema->nama }}</td>
+                        <td>
                             <ul>
                                 @foreach ($penelitian->dosen as $dosen)
                                 <li>{{ $dosen->nama }} <b> {{ ($dosen->id === $penelitian->dosen_id) ? '(Ketua)' : '' }}
@@ -26,12 +27,12 @@
                                 </li>
                                 @endforeach
                             </ul>
-                        </td class="table-active">
+                        </td>
                         {{-- <td>{{ $penelitian->dosen->nama }}</td> --}}
-                        <td class="table-active">{{ $penelitian->grp_riset }}</td>
-                        <td class="table-active">{{ $penelitian->tahun }}</td>
-                        <td class="table-active">{{ $penelitian->lama_kgtn }}</td>
-                        <td class="table-active">{{ $penelitian->thn_pekerjaan }}</td>
+                        <td>{!! $penelitian->grp_riset !!} </td>
+                        <td>{{ $penelitian->tahun }}</td>
+                        <td>{{ $penelitian->lama_kgtn }}</td>
+                        <td>{{ $penelitian->thn_pekerjaan }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -43,43 +44,42 @@
                     <td colspan="2" style="background-color: #05445E"></td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>judul</b></td>
+                    <td><b>judul</b></td>
                     <td>{{ $penelitian->judul }}</td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Rumpun Ilmu</b></td>
-                    <td>{{ $penelitian->rumpun_ilmu }}</td>
+                    <td><b>Rumpun Ilmu</b></td>
+                    <td> {!! $penelitian->rumpun_ilmu !!}</td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Abstrak</b></td>
-                    <td>{{ $penelitian->abstrak }}</td>
+                    <td><b>Abstrak</b></td>
+                    <td> {!! $penelitian->abstrak !!} </td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Keyword</b></td>
-                    <td>{{ $penelitian->keyword }}</td>
+                    <td><b>Keyword</b></td>
+                    <td>{!! $penelitian->keyword !!}</td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Latar Belakang</b></td>
-                    <td>{{ $penelitian->latar_belakang }}</td>
+                    <td><b>Latar Belakang</b></td>
+                    <td>{!! $penelitian->latar_belakang !!} </td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Tujuan</b></td>
-                    <td>{{ $penelitian->tujuan }}</td>
+                    <td><b>Tujuan</b></td>
+                    <td>{!! $penelitian->tujuan !!} </td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Tinjau Pustaka</b></td>
-                    <td>{{ $penelitian->tinjau_pustaka }}</td>
+                    <td><b>Tinjau Pustaka</b></td>
+                    <td>{!! $penelitian->tinjau_pustaka !!} </td>
                 </tr>
                 <tr>
-                    <td class="table-active"><b>Metode</b></td>
-                    <td>{{ $penelitian->metode }}</td>
+                    <td><b>Metode</b></td>
+                    <td>{!! $penelitian->metode !!} </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="background-color: #05445E"></td>
                 </tr>
             </tbody>
         </table>
-
         {{-- <button class="btn-info"><a href="#"><i class="fa fa-download"></i> download abstract </a></button> --}}
         {{-- <a href="/data" class="btn btn-light me-2 mb-3 "><i class="fa fa-arrow-left"></i> kembali</a> --}}
     </div>

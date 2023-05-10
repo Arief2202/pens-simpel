@@ -4,18 +4,19 @@
 <div class="row mt-2 mb-2">
     <div class="col-md-12">
         @yield('button')
-        <div class="card border-0 shadow rounded">
+        <div class="card border-2 shadow rounded" style="background-color: rgba(177, 233, 255, 0.155); backdrop-filter: blur(3px);">
             <div class="card-header">
                 <div class="row">
                     <div class="col-lg-6 col-7">
                       <h2>{{ $title }}</h2>
                     </div>
                     <div class="col-lg-6 col-5 my-auto text-end">
-                        <a href="tambahpengumuman" class="btn btn-success"  style="font-size: 13px"><i class="fa fa-plus me-2"></i>Buat Baru</a>
+                        <a href="tambahpengumuman" class="btn btn-success"  style="font-size: 13px"><i class="fa fa-plus me-2"></i>Tambah Pengumuman</a>
                     </div>
                   </div>
             </div>
-            <div class="card-body">
+            <div class="card-6"><div class="card-body p-0"></div></div>
+            <div class="card-body" style="background-color: white">
                 <div class="table-responsive">
                     
                     @if (session()->has('successEdit'))
@@ -89,14 +90,23 @@
         </div>
     </div>
 </div>
+<style>
+    .dataTables_length select{ 
+        padding-right: 50px;
+    }
+  </style>
 <script>
     $(document).ready(function () {
   $('#dtOrder').DataTable({
+    lengthMenu: [
+            [5 , 10, 15, -1],
+            [5 , 10, 15, 20, 25, 'All'],
+        ],
     "order": [[ 0, "asc" ]],
     "aaSorting": [],
     columnDefs: [{
     orderable: false,
-    targets: [5]
+    targets: [3,4]
     }]
   });
     $('.dataTables_length').addClass('bs-select');

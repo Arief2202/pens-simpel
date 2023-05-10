@@ -47,12 +47,17 @@
 </style>
 <div class="row mt-2 mb-2">
     <div class="col-md-12">
-        <div class="card border-1 shadow rounded">
+        <div class="card border-2 shadow rounded" style="background-color: rgba(177, 233, 255, 0.155); backdrop-filter: blur(3px);">
             <div class="card-header">
-                <form action="/dataprodi" method="get" class="pt-2 pb-2">
+                <h2>Filter Data Penelitian</h2>
+            </div>
+        <div class="card-6"><div class="card-body p-0"></div></div>
+            <div class="card-body" style="background-color: white">
+                <div class="row">
+                <form action="/dataprodi" method="get" class="pt-2 pb-2 mb-3">
                     {{-- @csrf --}}
-                    <div class="row align-items-center ">
-                        <div class="col-lg-2 d-flex flex-column">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 m-0 d-flex flex-column">
                             <div class="select-box">
                                 <select id="select-box1" name="prodi" class="browser-default custom-select" data-size="3">
                                     <option data-list="all" value="" {{ ($data->prodi === '') ? 'selected' : '' }}>Semua
@@ -67,7 +72,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-2 d-flex flex-column">
+                        <div class="col-lg-3 m-0 d-flex flex-column">
                             <div class="select-box">
                                 <select id="select-box2" name="tahun" class="browser-default custom-select" data-size="3">
                                     <option data-list="all" value="" {{ ($data->tahun === '') ? 'selected' : '' }}>Semua
@@ -81,14 +86,11 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-3 d-flex flex-column">
-                            <button type="submit" class="btn btn-success" style="border-color: #05445E; width: 50%">Dapatkan Data</button>
+                        <div class="col-lg-auto d-flex flex-column">
+                            <button type="submit" class="btn btn-success" style="border-color: #05445E;">Filter</button>
                         </div>
-
                 </form>
             </div>
-        </div>
-        <div class="card-body">
             <div class="row">
                 @foreach ($penelitians as $p)
 
@@ -104,22 +106,23 @@
                 }
                  ?>
                 <div class="col-md-3 project {{ $namaProdi }}  {{ $item->tahun }}">
-                    <div class="card baseBlock bg-light">
-                        <div class="card-body">
+                    <div class="card border-1 baseBlock" style="border-color: #05435eb1">
+                        <a href="/{{ $item->prodi_id }}/{{ $item->tahun }}" class="card-body" style="color: #05445E">
                             <center>
                                 <h5 class="card-title">
-                                    <small><b><span>{{ $namaProdi }}</span></b></small>
+                                    <small><b><span>{{ $namaProdi }}</span></b></small><br>
+                                    <small><b><span>{{ $item->tahun }}</span></b></small>
                                     <hr>
-                                    <span>{{ $item->tahun }}</span>
                                 </h5>
                             </center>
-                        </div>
-                        
-                        <div class="card-footer">
-                            <a href="/{{ $item->prodi_id }}/{{ $item->tahun }}"
-                                class="btn btn-light me-3" style="border-color: #05445E"><i class="fa fa-eye me-2"></i>buka</a>
-                            <span>total penelitian : {{ $item->jumlah }}</span>
-                        </div>
+                            <span>total penelitian : {{ $item->jumlah }} </span>
+                        </a>
+                        <style>
+                            .card .baseBlock:hover{
+                                background-color: #afd7fb;
+                                color: #fff;
+                            }
+                        </style>
                     </div>
                 </div>
 
